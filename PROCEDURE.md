@@ -31,8 +31,27 @@ Pour changer le fonctionnement, on modifie ce fichier : la tâche le relit à ch
 - Scène 1 = accroche de 10 mots maximum (question ou affirmation surprenante).
 - Dernière scène = appel à l'action, à varier (s'abonner, commenter, enregistrer, partager).
 - Écrire les nombres en lettres dans le texte lu (« deux minutes »), pas dans le titre.
-- Une icône Lucide par scène, cohérente avec le texte (liste : `~/.cache/motivatio/lucide/package/icons/`).
-- Fichier : `scripts_videos/AAAA-MM-JJ_slug.json`, au format de `scripts_videos/exemple.json`.
+- Un seul visuel par scène : une icône Lucide (`icone`), une carte de texte (`carte`, pour montrer un
+  prompt à l'écran : type `mauvais`, `bon` ou `info`), ou le visuel du guide (`produit`).
+  Liste des icônes : `~/.cache/motivatio/lucide/package/icons/`. Modèle complet :
+  `scripts_videos/2026-10-24_prompt-flou-vs-precis.json`.
+- Fichier : `scripts_videos/AAAA-MM-JJ_slug.json`.
+
+## Campagne en cours : guide IA PRATIQUE
+
+- Produit : « IA PRATIQUE — 30 prompts pour gagner du temps », guide PDF de 19 pages,
+  10 prompts études, 10 emploi, 10 projets. Prix : 12 000 CDF.
+  Lien officiel, le seul à utiliser : https://vcixxduw.mychariow.co/prd_2un4krca
+- Chaque semaine, **2 vidéos sur 5** sont des vidéos de campagne. Les 3 autres sont 100 % conseils.
+- Vidéo de campagne : d'abord une astuce gratuite, complète et utilisable sans acheter ;
+  le guide n'apparaît que dans la dernière scène (visuel `produit`), une seule fois, sans pression.
+  Champ Metricool obligatoire en plus : `tiktokData.commercialContentOwnBrand: true`.
+- Interdit : faux témoignages, faux chiffres de ventes, promesse d'emploi, de note ou de revenu,
+  fausse urgence (« dernières places », « prix qui augmente demain »).
+- Ne jamais décrire le contenu précis du guide au-delà de ce qui est écrit ci-dessus.
+- Appel à l'action : « Écris GUIDE en commentaire ».
+  **lien_bio_confirme : non** — tant que cette ligne dit « non », ne jamais écrire ni dire
+  « lien dans la bio ». Serge la passera à « oui » quand le lien du profil TikTok sera vérifié.
 
 ## Étapes de la tâche
 
@@ -41,11 +60,17 @@ Pour changer le fonctionnement, on modifie ce fichier : la tâche le relit à ch
    (accès en écriture) et le cloner. Puis lancer `bash scripts/setup.sh`.
 2. **Analyse** : lire les statistiques TikTok Metricool des 30 derniers jours
    (vidéos : TKPO01, TKPO03, TKPO05, TKPO07, TKPO08, TKPO09, TKPO10, TKPO13, TKPO15 ;
-   compte : TKEV07, TKEV08). Ajouter en tête de `journal/analyses.md` un bilan daté : meilleures et
-   pires vidéos, hypothèses, 3 décisions concrètes pour la semaine. S'il n'y a pas encore de données,
-   l'écrire simplement.
-3. **Idées** : faire quelques recherches web sur l'actualité IA, productivité et numérique,
-   choisir 5 sujets en tenant compte du bilan et de `journal/videos.csv`.
+   compte : TKEV07, TKEV08, TKEV09). Ajouter en tête de `journal/analyses.md` un bilan daté :
+   meilleures et pires vidéos, vidéos de campagne comparées aux vidéos conseils, hypothèses,
+   3 décisions concrètes pour la semaine. Ajouter une ligne à `journal/suivi_commercial.csv` avec les
+   colonnes mesurables par Metricool ; laisser vides les colonnes que seul Serge connaît (clics,
+   visites Chariow, commandes, chiffre d'affaires). Ne jamais deviner ni estimer une vente.
+   S'il n'y a pas encore de données, l'écrire simplement.
+3. **Idées** : lire avec getScheduledPosts les posts déjà présents du mardi au samedi de la semaine.
+   Nombre de vidéos à créer = 5 moins le nombre de posts déjà présents sur ces jours (jamais moins
+   de 0), pour rester sous la limite de Metricool Free. Faire quelques recherches web sur l'actualité
+   IA, productivité et numérique, puis choisir les sujets en tenant compte du bilan, de
+   `journal/videos.csv` et de la répartition campagne / conseils ci-dessus.
 4. **Scripts** : écrire les 5 fichiers JSON, puis `python3 scripts/check.py script <fichier>`
    pour chacun ; corriger tant que le contrôle échoue.
 5. **Rendu** : `python3 scripts/make_video.py <json> videos/<même-nom>.mp4`, puis
