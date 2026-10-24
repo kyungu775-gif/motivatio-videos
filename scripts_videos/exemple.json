@@ -1,0 +1,17 @@
+{
+  "titre": "La règle des 2 minutes",
+  "vitesse": 1.05,
+  "scenes": [
+    {"texte": "Tu repousses tout à demain ? Essaie la règle des deux minutes.", "icone": "hourglass"},
+    {"texte": "Si une tâche prend moins de deux minutes, fais-la tout de suite. Répondre à un message, ranger ton bureau, noter une idée.", "icone": "timer"},
+    {"texte": "Pour une grosse tâche, engage-toi seulement deux minutes. Ouvre le document, écris la première phrase.", "icone": "rocket"},
+    {"texte": "Le plus dur, c'est de démarrer. Une fois lancé, ton cerveau a envie de continuer.", "icone": "brain"},
+    {"texte": "Abonne-toi pour une astuce productivité chaque jour.", "icone": "bell"}
+  ],
+  "tiktok": {
+    "titre_tiktok": "La règle des 2 minutes",
+    "legende": "Tu repousses tout à demain ? Essaie la règle des 2 minutes ⏳ Quelle tâche tu fais maintenant ? 👇 #productivité #motivation #astuces #TikTokFrancophone",
+    "sujet": "productivité",
+    "accroche": "Tu repousses tout à demain ?"
+  }
+}
