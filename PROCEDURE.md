@@ -36,8 +36,9 @@ Pour changer le fonctionnement, on modifie ce fichier : la tâche le relit à ch
 
 ## Étapes de la tâche
 
-1. **Accès** : rattacher le dépôt `kyungu775-gif/motivatio-videos` avec l'accès en écriture, le cloner,
-   puis lancer `bash scripts/setup.sh`.
+1. **Accès** : si `/home/claude/motivatio-videos` existe déjà, faire `git fetch origin main` puis
+   `git merge --ff-only FETCH_HEAD`. Sinon, rattacher le dépôt `kyungu775-gif/motivatio-videos`
+   (accès en écriture) et le cloner. Puis lancer `bash scripts/setup.sh`.
 2. **Analyse** : lire les statistiques TikTok Metricool des 30 derniers jours
    (vidéos : TKPO01, TKPO03, TKPO05, TKPO07, TKPO08, TKPO09, TKPO10, TKPO13, TKPO15 ;
    compte : TKEV07, TKEV08). Ajouter en tête de `journal/analyses.md` un bilan daté : meilleures et
@@ -54,8 +55,11 @@ Pour changer le fonctionnement, on modifie ce fichier : la tâche le relit à ch
    `https://raw.githubusercontent.com/kyungu775-gif/motivatio-videos/main/videos/<fichier>.mp4`
    (code 200 et taille identique au fichier local).
 7. **Metricool** : marque `7625666`, fuseau `Africa/Kinshasa`. Pour chaque vidéo, créer un brouillon
-   TikTok avec le lien public, la légende et le titre TikTok du script. Dates des brouillons : la
-   semaine suivante, sur les meilleurs créneaux donnés par Metricool, une vidéo par jour.
+   TikTok avec le lien public, la légende et le titre TikTok du script. Dates des brouillons : du
+   mardi au samedi de la semaine en cours, une vidéo par jour, sur le meilleur créneau du jour donné
+   par Metricool (getBestTimeToPostByNetwork). Champs obligatoires : `draft: true`,
+   `autoPublish: false`, `tiktokData.title`, `tiktokData.isAigc: true`.
+   Après création, relire avec getScheduledPosts et vérifier que chaque brouillon a `draft: true`.
 8. **Journal** : ajouter une ligne par vidéo dans `journal/videos.csv` (avec l'uuid Metricool),
    faire un commit et pousser.
 9. **Rapport** à Serge (court, en français) : les 5 titres, le lien Metricool de chaque brouillon,
