@@ -1,0 +1,33 @@
+{
+  "titre": "Améliore ton CV avec ChatGPT",
+  "vitesse": 1.08,
+  "campagne": "IA PRATIQUE",
+  "scenes": [
+    {
+      "texte": "Voici une méthode simple pour rendre ton CV plus clair avec ChatGPT.",
+      "icone": "file-text"
+    },
+    {
+      "texte": "Étape une : copie ton CV, mais retire d'abord ton adresse, ton téléphone et tes numéros de pièces d'identité.",
+      "icone": "shield-check"
+    },
+    {
+      "texte": "Étape deux : colle aussi l'offre d'emploi visée, et demande-lui de comparer, sans rien inventer.",
+      "carte": {"type": "bon", "etiquette": "Prompt à copier", "texte": "Voici mon CV et l'offre d'emploi visée. Liste les compétences demandées qui manquent dans mon CV, puis propose des formulations plus claires. N'invente aucune expérience."}
+    },
+    {
+      "texte": "Étape trois : relis chaque proposition, et garde seulement ce qui est vrai.",
+      "icone": "pen-line"
+    },
+    {
+      "texte": "Le guide IA PRATIQUE contient dix prompts pour l'emploi, et vingt pour les études et les projets. Douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF"}
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Améliore ton CV avec ChatGPT",
+    "legende": "Une méthode en 3 étapes pour un CV plus clair ✍️ 1) Retire tes données personnelles 2) Compare ton CV à l'offre 3) Garde seulement ce qui est vrai. Un CV plus clair ne garantit pas un emploi, mais il aide le recruteur à te comprendre vite. Guide IA PRATIQUE : 30 prompts, 12 000 CDF. Écris GUIDE en commentaire 👇 #CV #Emploi #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "IA – emploi, CV",
+    "accroche": "Rends ton CV plus clair avec ChatGPT"
+  }
+}

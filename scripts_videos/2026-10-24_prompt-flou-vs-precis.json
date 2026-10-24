@@ -1,0 +1,33 @@
+{
+  "titre": "Tu utilises mal ChatGPT ?",
+  "vitesse": 1.08,
+  "campagne": "IA PRATIQUE",
+  "scenes": [
+    {
+      "texte": "Tu utilises mal ChatGPT si tu lui demandes seulement : fais-moi un exposé sur le climat.",
+      "carte": {"type": "mauvais", "etiquette": "Prompt flou", "texte": "Fais-moi un exposé sur le climat."}
+    },
+    {
+      "texte": "La réponse risque d'être vague, trop longue, et pas adaptée à ton niveau.",
+      "icone": "message-square"
+    },
+    {
+      "texte": "Donne-lui plutôt un rôle, un objectif, un public et un format. Comme ici.",
+      "carte": {"type": "bon", "etiquette": "Prompt précis", "texte": "Tu es professeur de géographie. Prépare le plan d'un exposé de 5 minutes sur le changement climatique, pour des élèves de terminale, en 3 parties, avec un exemple africain dans chaque partie."}
+    },
+    {
+      "texte": "Rôle, objectif, public, format. Avec ces quatre éléments, la réponse devient beaucoup plus utile.",
+      "icone": "target"
+    },
+    {
+      "texte": "Trente prompts déjà prêts t'attendent dans le guide IA PRATIQUE, à douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF"}
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Tu utilises mal ChatGPT ?",
+    "legende": "Un prompt flou donne une réponse floue 🤖 Retiens la formule : rôle + objectif + public + format. Tu veux 30 prompts prêts à l'emploi ? Le guide IA PRATIQUE (PDF, 19 pages) est à 12 000 CDF. Écris GUIDE en commentaire 👇 #ChatGPT #IntelligenceArtificielle #AstucesIA #Études #TikTokFrancophone",
+    "sujet": "IA – bien formuler un prompt",
+    "accroche": "Tu utilises mal ChatGPT ?"
+  }
+}

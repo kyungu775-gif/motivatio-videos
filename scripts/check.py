@@ -28,9 +28,20 @@ def check_script(path):
     for i, s in enumerate(scenes, 1):
         if not s.get("texte"):
             errs.append(f"scène {i} sans texte")
+        if any(ch.isdigit() for ch in s.get("texte", "")):
+            errs.append(f"scène {i} : chiffres dans le texte lu, à écrire en lettres pour la voix")
+        visuels = [k for k in ("icone", "carte", "produit") if s.get(k)]
+        if len(visuels) > 1:
+            errs.append(f"scène {i} : un seul visuel par scène ({', '.join(visuels)})")
         ic = s.get("icone")
         if ic and os.path.isdir(ICONS) and not os.path.exists(os.path.join(ICONS, ic + ".svg")):
             errs.append(f"scène {i} : icône « {ic} » introuvable (voir {ICONS})")
+        carte = s.get("carte")
+        if carte:
+            if carte.get("type", "info") not in ("mauvais", "bon", "info"):
+                errs.append(f"scène {i} : type de carte inconnu « {carte.get('type')} »")
+            if not carte.get("texte") or len(carte["texte"]) > 300:
+                errs.append(f"scène {i} : texte de carte absent ou trop long (max 300 car.)")
     meta = d.get("tiktok", {})
     if not meta.get("legende"):
         errs.append("légende TikTok absente (champ tiktok.legende)")

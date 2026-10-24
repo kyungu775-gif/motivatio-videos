@@ -1,0 +1,33 @@
+{
+  "titre": "3 façons de gagner du temps",
+  "vitesse": 1.08,
+  "campagne": "IA PRATIQUE",
+  "scenes": [
+    {
+      "texte": "Trois façons concrètes de gagner du temps avec l'IA, dès aujourd'hui.",
+      "icone": "sparkles"
+    },
+    {
+      "texte": "Pour tes études : colle ton cours, et demande dix questions de révision avec les réponses.",
+      "carte": {"type": "info", "etiquette": "Études", "texte": "Transforme ce cours en 10 questions de révision. Mets les réponses à la fin."}
+    },
+    {
+      "texte": "Pour ton travail : demande un premier brouillon d'e-mail, puis remets-le à ta façon.",
+      "carte": {"type": "info", "etiquette": "Emploi", "texte": "Rédige un e-mail court et poli pour proposer un rendez-vous mardi ou mercredi matin."}
+    },
+    {
+      "texte": "Pour tes projets : fais découper ton idée en petites tâches, semaine par semaine.",
+      "carte": {"type": "info", "etiquette": "Projets", "texte": "Découpe mon projet en tâches pour les 4 prochaines semaines, avec une priorité par semaine."}
+    },
+    {
+      "texte": "Et relis toujours : l'IA peut se tromper. Trente prompts de ce type sont dans le guide IA PRATIQUE, à douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF"}
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "3 façons de gagner du temps avec l'IA",
+    "legende": "Études, travail, projets : 3 prompts simples pour gagner du temps ⏱️ Relis toujours les réponses, l'IA peut se tromper. Le guide IA PRATIQUE réunit 30 prompts (PDF, 19 pages) à 12 000 CDF. Écris GUIDE en commentaire 👇 #IntelligenceArtificielle #Productivité #AstucesIA #ChatGPT #TikTokFrancophone",
+    "sujet": "IA – productivité études/emploi/projets",
+    "accroche": "Trois façons de gagner du temps avec l'IA"
+  }
+}
