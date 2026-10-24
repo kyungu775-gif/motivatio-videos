@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-24T13:13:46+01:00",
+  "etapes": {
+    "github_clone": "OK (partiel) — outil add_repo introuvable via ToolSearch ; le dépôt était déjà dans le périmètre et déjà cloné dans /home/claude/motivatio-videos (git fetch origin main OK, à jour)",
+    "setup": "OK — scripts/setup.sh terminé en 12 s (exit 0)",
+    "generation": "OK — check script OK (5 scènes, 71 mots, ≈24 s) ; make_video OK en 82 s ; check video OK (23.1 s, 2.05 Mo, 1080x1920)",
+    "recherche_web": "OK — WebSearch fonctionne, 9 résultats",
+    "metricool_lecture": "OK — getBrandSettings (marque 7625666, TikTok motivativatio, fuseau Africa/Kinshasa) ; getScheduledPosts : 2 posts (24/10 15:00 en attente auto ; 31/10 18:00 brouillon test SELF_ONLY) ; getAnalyticsDataByMetrics : une ligne [0.0, 20261024]",
+    "metricool_creation_disponible": "oui"
+  },
+  "details": "Seule anomalie : add_repo non disponible dans cette session (non bloquant, accès déjà accordé). Aucun outil Metricool d'écriture appelé."
+}
