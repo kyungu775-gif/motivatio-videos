@@ -217,12 +217,13 @@ def synthese(k, texte, vitesse):
     return audio.astype(np.float32), res
 
 
-def temps_du_mot(mots, cible, apres=0.0):
-    c = norm(cible.split()[0]) if cible.split() else ""
-    for m in mots:
-        if m["debut"] >= apres - 1e-6 and c and norm(m["mot"]).startswith(c):
-            return m["debut"]
-    return None
+def temps_du_mot(mots, cible, apres=0.0, dernier=False):
+    """Moment où la voix prononce `cible` (premier après `apres`, ou dernière occurrence)."""
+    c = norm(cible.split()[0]) if cible and cible.split() else ""
+    trouves = [m["debut"] for m in mots if m["debut"] >= apres - 1e-6 and c and norm(m["mot"]).startswith(c)]
+    if not trouves:
+        return None
+    return trouves[-1] if dernier else trouves[0]
 
 
 # ------------------------------------------------------------------ éléments visuels
@@ -259,7 +260,7 @@ class Icone(Element):
         coller(frame, self.img, W / 2, self.cy + flotte, 0.6 + 0.4 * e, a * clamp(u / 0.2), dx)
         if self.label:
             el = out_cubic((u - 0.25) / 0.35)
-            coller(frame, self.label, W / 2, self.cy + 380 + 30 * (1 - el), 1, a * el, dx)
+            coller(frame, self.label, W / 2, self.cy + 330 + 30 * (1 - el), 1, a * el, dx)
 
 
 class Carte(Element):
@@ -457,7 +458,7 @@ class Produit(Element):
                           icone_nom="message-circle", pad=(40, 16))
         self.cy = (self.haut + 40 if self.titre else 300) + bh / 2 * 0.88
         self.t_prix = 0.75
-        tc = temps_du_mot(self.mots, p.get("mot_cta", "GUIDE"))
+        tc = temps_du_mot(self.mots, p.get("mot_cta", "GUIDE"), dernier=True)
         self.t_cta = tc - 0.1 if tc is not None else self.dur * 0.6
         self.sons += [(0.0, "whoosh"), (0.55, "brillance"), (self.t_prix, "pop"), (self.t_cta, "pop")]
 
@@ -495,8 +496,11 @@ class Titre(Element):
         self.mots_img = []
         lignes, cur, largeur = [], [], 0
         sp = 24
+        dans_accent = False
         for m in brut:
-            accent = m.startswith("*") and m.endswith("*")
+            debut_acc = m.startswith("*")
+            accent = dans_accent or debut_acc
+            dans_accent = accent and not m.endswith("*")
             txt = m.strip("*").upper()
             w = int(ImageDraw.Draw(Image.new("L", (1, 1))).textlength(txt, font=f))
             if cur and largeur + sp + w > 940:
