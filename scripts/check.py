@@ -15,9 +15,9 @@ ICONS = os.path.join(CACHE, "lucide", "package", "icons")
 def check_script(path):
     errs = []
     d = json.load(open(path, encoding="utf-8"))
-    titre = d.get("titre", "")
-    if not titre or len(titre) > 34:
-        errs.append(f"titre absent ou trop long ({len(titre)} car., max 34)")
+    titre = d.get("titre", "").replace("*", "")
+    if not titre or len(titre) > 46:
+        errs.append(f"titre absent ou trop long ({len(titre)} car., max 46 ; il tient sur 2 lignes)")
     scenes = d.get("scenes", [])
     if not 3 <= len(scenes) <= 8:
         errs.append(f"{len(scenes)} scènes (attendu 3 à 8)")
@@ -30,9 +30,21 @@ def check_script(path):
             errs.append(f"scène {i} sans texte")
         if any(ch.isdigit() for ch in s.get("texte", "")):
             errs.append(f"scène {i} : chiffres dans le texte lu, à écrire en lettres pour la voix")
-        visuels = [k for k in ("icone", "carte", "produit") if s.get(k)]
+        visuels = [k for k in ("icone", "carte", "liste", "formule", "produit") if s.get(k)]
         if len(visuels) > 1:
             errs.append(f"scène {i} : un seul visuel par scène ({', '.join(visuels)})")
+        if not visuels:
+            errs.append(f"scène {i} : aucun visuel (icone, carte, liste, formule ou produit)")
+        liste = s.get("liste")
+        if liste and not 2 <= len(liste.get("items", [])) <= 5:
+            errs.append(f"scène {i} : une liste doit avoir 2 à 5 éléments")
+        if s.get("formule") and not 2 <= len(s["formule"]) <= 5:
+            errs.append(f"scène {i} : une formule doit avoir 2 à 5 mots")
+        mots_scene = {''.join(c for c in w.lower() if c.isalnum()) for w in s.get("texte", "").split()}
+        for it in (liste or {}).get("items", []):
+            mot = it.get("mot") if isinstance(it, dict) else None
+            if mot and not any(m.startswith(''.join(c for c in mot.lower() if c.isalnum())) for m in mots_scene):
+                errs.append(f"scène {i} : le mot « {mot} » n'est pas prononcé, l'élément ne sera pas synchronisé")
         ic = s.get("icone")
         if ic and os.path.isdir(ICONS) and not os.path.exists(os.path.join(ICONS, ic + ".svg")):
             errs.append(f"scène {i} : icône « {ic} » introuvable (voir {ICONS})")

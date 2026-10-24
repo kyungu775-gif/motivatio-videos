@@ -27,15 +27,20 @@ Pour changer le fonctionnement, on modifie ce fichier : la tâche le relit à ch
 
 ## Format d'une vidéo
 
-- 4 à 6 scènes, 75 à 130 mots au total (≈ 25 à 45 s).
-- Scène 1 = accroche de 10 mots maximum (question ou affirmation surprenante).
-- Dernière scène = appel à l'action, à varier (s'abonner, commenter, enregistrer, partager).
-- Écrire les nombres en lettres dans le texte lu (« deux minutes »), pas dans le titre.
-- Un seul visuel par scène : une icône Lucide (`icone`), une carte de texte (`carte`, pour montrer un
-  prompt à l'écran : type `mauvais`, `bon` ou `info`), ou le visuel du guide (`produit`).
-  Liste des icônes : `~/.cache/motivatio/lucide/package/icons/`. Modèle complet :
+- 5 scènes environ, 75 à 100 mots au total (≈ 25 à 35 s). Une vidéo plus courte est regardée
+  jusqu'au bout plus souvent.
+- Scène 1 = accroche de 10 mots maximum (question ou affirmation surprenante), avec un `titre`
+  qui met un mot en valeur (`*mot*`).
+- Varier les visuels d'une scène à l'autre : la vidéo doit montrer quelque chose qui bouge à
+  chaque scène. Préférer `carte` (prompt tapé à l'écran), `liste` et `formule` (synchronisées sur la
+  voix) à une simple `icone`. Format complet et exemples : `scripts/FORMAT.md` ; modèle :
   `scripts_videos/2026-10-24_prompt-flou-vs-precis.json`.
+- Dernière scène = appel à l'action, à varier (s'abonner, commenter, enregistrer, partager).
+- Écrire les nombres en lettres dans le texte lu (« deux minutes »), pas dans le titre ni les cartes.
 - Fichier : `scripts_videos/AAAA-MM-JJ_slug.json`.
+- Contrôle visuel obligatoire après rendu : extraire une planche
+  (`ffmpeg -i video.mp4 -vf "fps=2/3,scale=216:-1,tile=8x3" -frames:v 1 planche.png`), la regarder,
+  et corriger tout texte coupé, chevauchement ou scène vide avant l'envoi.
 
 ## Campagne en cours : guide IA PRATIQUE
 

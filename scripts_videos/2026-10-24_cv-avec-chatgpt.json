@@ -1,27 +1,37 @@
 {
-  "titre": "Améliore ton CV avec ChatGPT",
-  "vitesse": 1.08,
+  "titre": "Améliore ton *CV* avec ChatGPT",
+  "vitesse": 1.06,
   "campagne": "IA PRATIQUE",
+  "mots_cles": ["étape", "vrai", "GUIDE"],
   "scenes": [
     {
-      "texte": "Voici une méthode simple pour rendre ton CV plus clair avec ChatGPT.",
-      "icone": "file-text"
+      "texte": "Voici une méthode simple, en trois étapes, pour rendre ton CV plus clair avec ChatGPT.",
+      "icone": "file-text",
+      "label": "Méthode en 3 étapes"
     },
     {
-      "texte": "Étape une : copie ton CV, mais retire d'abord ton adresse, ton téléphone et tes numéros de pièces d'identité.",
-      "icone": "shield-check"
+      "texte": "Étape une : avant de copier ton CV, retire ton adresse, ton téléphone et tes numéros de pièce d'identité.",
+      "liste": {"style": "croix", "titre": "Étape 1 · Protège tes données", "items": [
+        {"texte": "Adresse", "mot": "adresse"},
+        {"texte": "Téléphone", "mot": "téléphone"},
+        {"texte": "Numéros de pièce d'identité", "mot": "numéros"}
+      ]}
     },
     {
-      "texte": "Étape deux : colle aussi l'offre d'emploi visée, et demande-lui de comparer, sans rien inventer.",
-      "carte": {"type": "bon", "etiquette": "Prompt à copier", "texte": "Voici mon CV et l'offre d'emploi visée. Liste les compétences demandées qui manquent dans mon CV, puis propose des formulations plus claires. N'invente aucune expérience."}
+      "texte": "Étape deux : colle ton CV et l'offre d'emploi, puis envoie ce prompt.",
+      "carte": {"type": "bon", "etiquette": "Étape 2 · Prompt à copier", "badge": "À copier", "texte": "Voici mon CV et l'offre d'emploi visée. Liste les compétences demandées qui manquent dans mon CV, puis propose des formulations plus claires. N'invente aucune expérience."}
     },
     {
-      "texte": "Étape trois : relis chaque proposition, et garde seulement ce qui est vrai.",
-      "icone": "pen-line"
+      "texte": "Étape trois : relis chaque proposition. Garde seulement ce qui est vrai, et vérifie les dates et les noms.",
+      "liste": {"titre": "Étape 3 · Vérifie", "items": [
+        {"texte": "Seulement ce qui est vrai", "mot": "vrai"},
+        {"texte": "Les dates", "mot": "dates"},
+        {"texte": "Les noms", "mot": "noms"}
+      ]}
     },
     {
       "texte": "Le guide IA PRATIQUE contient dix prompts pour l'emploi, et vingt pour les études et les projets. Douze mille francs congolais. Écris GUIDE en commentaire.",
-      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF"}
+      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF", "cta": "Écris GUIDE en commentaire", "mot_cta": "GUIDE"}
     }
   ],
   "tiktok": {

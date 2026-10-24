@@ -1,27 +1,32 @@
 {
-  "titre": "Tu utilises mal ChatGPT ?",
-  "vitesse": 1.08,
+  "titre": "Tu utilises *mal* ChatGPT ?",
+  "vitesse": 1.06,
   "campagne": "IA PRATIQUE",
+  "mots_cles": ["rôle", "objectif", "public", "format", "GUIDE"],
   "scenes": [
     {
-      "texte": "Tu utilises mal ChatGPT si tu lui demandes seulement : fais-moi un exposé sur le climat.",
-      "carte": {"type": "mauvais", "etiquette": "Prompt flou", "texte": "Fais-moi un exposé sur le climat."}
+      "texte": "Tu utilises mal ChatGPT si tu lui écris seulement : fais-moi un exposé sur le climat.",
+      "carte": {"type": "mauvais", "etiquette": "Prompt flou", "texte": "Fais-moi un exposé sur le climat.", "badge": "Trop vague"}
     },
     {
       "texte": "La réponse risque d'être vague, trop longue, et pas adaptée à ton niveau.",
-      "icone": "message-square"
+      "liste": {"style": "croix", "titre": "Le résultat", "items": [
+        {"texte": "Réponse vague", "mot": "vague"},
+        {"texte": "Beaucoup trop longue", "mot": "longue"},
+        {"texte": "Pas adaptée à ton niveau", "mot": "adaptée"}
+      ]}
     },
     {
-      "texte": "Donne-lui plutôt un rôle, un objectif, un public et un format. Comme ici.",
-      "carte": {"type": "bon", "etiquette": "Prompt précis", "texte": "Tu es professeur de géographie. Prépare le plan d'un exposé de 5 minutes sur le changement climatique, pour des élèves de terminale, en 3 parties, avec un exemple africain dans chaque partie."}
+      "texte": "Donne-lui plutôt quatre éléments : un rôle, un objectif, un public, et un format.",
+      "formule": ["Rôle", "Objectif", "Public", "Format"]
     },
     {
-      "texte": "Rôle, objectif, public, format. Avec ces quatre éléments, la réponse devient beaucoup plus utile.",
-      "icone": "target"
+      "texte": "Voici le même prompt, en version précise. La réponse devient beaucoup plus utile.",
+      "carte": {"type": "bon", "etiquette": "Prompt précis", "badge": "Précis", "texte": "Tu es professeur de géographie. Prépare le plan d'un exposé de 5 minutes sur le changement climatique, pour des élèves de terminale, en 3 parties, avec un exemple africain dans chaque partie."}
     },
     {
-      "texte": "Trente prompts déjà prêts t'attendent dans le guide IA PRATIQUE, à douze mille francs congolais. Écris GUIDE en commentaire.",
-      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF"}
+      "texte": "Trente prompts précis comme celui-ci sont prêts dans le guide IA PRATIQUE, à douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF", "cta": "Écris GUIDE en commentaire", "mot_cta": "GUIDE"}
     }
   ],
   "tiktok": {

@@ -1,27 +1,28 @@
 {
-  "titre": "3 façons de gagner du temps",
-  "vitesse": 1.08,
+  "titre": "*3 façons* de gagner du temps avec l'IA",
+  "vitesse": 1.06,
   "campagne": "IA PRATIQUE",
+  "mots_cles": ["études", "travail", "projets", "GUIDE"],
   "scenes": [
     {
       "texte": "Trois façons concrètes de gagner du temps avec l'IA, dès aujourd'hui.",
       "icone": "sparkles"
     },
     {
-      "texte": "Pour tes études : colle ton cours, et demande dix questions de révision avec les réponses.",
-      "carte": {"type": "info", "etiquette": "Études", "texte": "Transforme ce cours en 10 questions de révision. Mets les réponses à la fin."}
+      "texte": "Un : pour tes études. Colle ton cours, et demande dix questions de révision, avec les réponses.",
+      "carte": {"type": "info", "etiquette": "1 · Études", "texte": "Transforme ce cours en 10 questions de révision. Mets les réponses à la fin."}
     },
     {
-      "texte": "Pour ton travail : demande un premier brouillon d'e-mail, puis remets-le à ta façon.",
-      "carte": {"type": "info", "etiquette": "Emploi", "texte": "Rédige un e-mail court et poli pour proposer un rendez-vous mardi ou mercredi matin."}
+      "texte": "Deux : pour ton travail. Demande un premier brouillon d'e-mail, puis remets-le à ta façon.",
+      "carte": {"type": "info", "etiquette": "2 · Travail", "texte": "Rédige un e-mail court et poli pour proposer un rendez-vous mardi ou mercredi matin."}
     },
     {
-      "texte": "Pour tes projets : fais découper ton idée en petites tâches, semaine par semaine.",
-      "carte": {"type": "info", "etiquette": "Projets", "texte": "Découpe mon projet en tâches pour les 4 prochaines semaines, avec une priorité par semaine."}
+      "texte": "Trois : pour tes projets. Fais découper ton idée en petites tâches, semaine par semaine.",
+      "carte": {"type": "info", "etiquette": "3 · Projets", "texte": "Découpe mon projet en tâches pour les 4 prochaines semaines, avec une priorité par semaine."}
     },
     {
-      "texte": "Et relis toujours : l'IA peut se tromper. Trente prompts de ce type sont dans le guide IA PRATIQUE, à douze mille francs congolais. Écris GUIDE en commentaire.",
-      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF"}
+      "texte": "Et relis toujours : l'IA peut se tromper. Trente prompts de ce type t'attendent dans le guide IA PRATIQUE, à douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF", "cta": "Écris GUIDE en commentaire", "mot_cta": "GUIDE"}
     }
   ],
   "tiktok": {
