@@ -1,0 +1,39 @@
+{
+  "titre": "Révise *autrement* avec l'IA",
+  "vitesse": 1.05,
+  "campagne": "IA PRATIQUE",
+  "mots_cles": ["interroger", "mémoire", "Vérifie", "GUIDE"],
+  "scenes": [
+    {
+      "texte": "Arrête de seulement relire. Fais-toi interroger par l'IA.",
+      "icone": "graduation-cap",
+      "label": "Relire ne suffit pas"
+    },
+    {
+      "texte": "Colle un passage de ton cours dans ChatGPT, puis envoie ce prompt.",
+      "carte": {"type": "bon", "etiquette": "Prompt à copier", "badge": "À copier", "texte": "Pose-moi 5 questions sur ce cours, une par une. Attends ma réponse avant la suivante. Ensuite, corrige-moi et explique mes erreurs simplement."}
+    },
+    {
+      "texte": "Tu réponds de mémoire, sans regarder tes notes. C'est cet effort qui t'aide à retenir.",
+      "liste": {"titre": "La règle", "items": [
+        {"texte": "Réponds de mémoire", "mot": "mémoire"},
+        {"texte": "Sans regarder tes notes", "mot": "notes"},
+        {"texte": "L'effort aide à retenir", "mot": "effort"}
+      ]}
+    },
+    {
+      "texte": "Attention : l'IA peut se tromper. Vérifie toujours ses corrections avec ton cours, ou avec ton professeur.",
+      "carte": {"type": "info", "etiquette": "Important", "texte": "L'IA peut se tromper. Ton cours reste la référence.", "badge": "Vérifie"}
+    },
+    {
+      "texte": "Le guide IA PRATIQUE contient dix prompts pour les études, et vingt pour l'emploi et les projets. Douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF", "cta": "Écris GUIDE en commentaire", "mot_cta": "GUIDE"}
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Révise autrement avec l'IA",
+    "legende": "Au lieu de relire, fais-toi interroger 📚 Colle ton cours dans ChatGPT et demande-lui 5 questions, une par une. Réponds de mémoire, puis vérifie les corrections avec ton cours. Guide IA PRATIQUE : 30 prompts (études, emploi, projets), 12 000 CDF. Écris GUIDE en commentaire 👇 #Études #Révisions #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "campagne IA PRATIQUE – réviser avec un quiz IA",
+    "accroche": "Arrête de seulement relire. Fais-toi interroger par l'IA."
+  }
+}

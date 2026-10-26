@@ -1,0 +1,38 @@
+{
+  "titre": "Planifie ta *semaine* avec l'IA",
+  "vitesse": 1.05,
+  "campagne": "IA PRATIQUE",
+  "mots_cles": ["tâches", "priorité", "décides", "GUIDE"],
+  "scenes": [
+    {
+      "texte": "Trop de tâches cette semaine ? L'IA peut t'aider.",
+      "carte": {"type": "mauvais", "etiquette": "Ma semaine", "texte": "Devoir, rendez-vous, courses, projet, appeler un client, réviser…", "badge": "Chaos"}
+    },
+    {
+      "texte": "Écris toutes tes tâches en vrac, avec leurs dates limites, et le temps libre que tu as chaque jour.",
+      "liste": {"titre": "Donne-lui", "items": [
+        {"texte": "Tes tâches", "mot": "tâches"},
+        {"texte": "Les dates limites", "mot": "dates"},
+        {"texte": "Ton temps libre", "mot": "temps"}
+      ]}
+    },
+    {
+      "texte": "Ensuite, envoie ce prompt. Il classe tes tâches par priorité, et les répartit sur ta semaine.",
+      "carte": {"type": "bon", "etiquette": "Prompt à copier", "badge": "À copier", "texte": "Voici mes tâches, leurs dates limites et mon temps libre chaque jour. Classe-les par priorité et répartis-les du lundi au vendredi. Garde une pause chaque jour."}
+    },
+    {
+      "texte": "Ajuste le plan si un jour est trop chargé. C'est toi qui décides, pas l'IA.",
+      "carte": {"type": "info", "etiquette": "Ton rôle", "texte": "L'IA propose. Toi, tu ajustes et tu décides.", "badge": "Toi d'abord"}
+    },
+    {
+      "texte": "Dix prompts pour tes projets t'attendent dans le guide IA PRATIQUE, avec vingt autres pour les études et l'emploi. Douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {"titre": "IA Pratique", "sous_titre": "30 prompts pour gagner du temps", "detail": "Guide PDF · 19 pages", "prix": "12 000 CDF", "cta": "Écris GUIDE en commentaire", "mot_cta": "GUIDE"}
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Planifie ta semaine avec l'IA",
+    "legende": "Une semaine chargée ? Donne à l'IA tes tâches, tes dates limites et ton temps libre, puis demande-lui de tout classer par priorité 🗓️ C'est toi qui ajustes le plan. Guide IA PRATIQUE : 30 prompts (études, emploi, projets), 12 000 CDF. Écris GUIDE en commentaire 👇 #Productivité #Organisation #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "campagne IA PRATIQUE – planifier sa semaine",
+    "accroche": "Trop de tâches cette semaine ? L'IA peut t'aider."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "titre": "Protège ton *WhatsApp*",
+  "vitesse": 1.05,
+  "mots_cles": ["jamais", "Validation", "secret", "email"],
+  "scenes": [
+    {
+      "texte": "Ton compte WhatsApp peut être volé avec un simple code.",
+      "carte": {"type": "mauvais", "etiquette": "Message suspect", "texte": "Salut ! Je t'ai envoyé un code par erreur. Tu peux me le renvoyer ?", "badge": "Arnaque"}
+    },
+    {
+      "texte": "Règle numéro un : ne donne jamais le code reçu par SMS, même à un ami, ou à un faux agent.",
+      "liste": {"style": "croix", "titre": "Le code SMS : à personne", "items": [
+        {"texte": "Pas à un ami", "mot": "ami"},
+        {"texte": "Pas à un « agent »", "mot": "agent"}
+      ]}
+    },
+    {
+      "texte": "Règle numéro deux : ouvre Paramètres, puis Compte, puis Validation en deux étapes.",
+      "liste": {"titre": "Active la protection", "items": [
+        {"texte": "Paramètres", "mot": "Paramètres"},
+        {"texte": "Compte", "mot": "Compte"},
+        {"texte": "Validation en deux étapes", "mot": "Validation"}
+      ]}
+    },
+    {
+      "texte": "Choisis un code secret que tu retiens bien, et ajoute ton adresse email pour pouvoir le récupérer si un jour tu l'oublies.",
+      "carte": {"type": "bon", "etiquette": "Bon réflexe", "texte": "Code secret bien retenu + adresse email de secours ajoutée.", "badge": "Protégé"}
+    },
+    {
+      "texte": "Partage cette vidéo à une personne de ta famille. Elle te remerciera.",
+      "icone": "shield-check",
+      "label": "Partage à ta famille"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Protège ton WhatsApp en une minute",
+    "legende": "2 règles pour garder ton compte WhatsApp 🔐 1) Ne donne jamais le code reçu par SMS, à personne. 2) Active la validation en deux étapes : Paramètres › Compte › Validation en deux étapes. Partage à ta famille 👇 #WhatsApp #SécuritéEnLigne #AstucesTéléphone #Arnaque #TikTokFrancophone",
+    "sujet": "sécurité – WhatsApp validation en deux étapes",
+    "accroche": "Ton compte WhatsApp peut être volé avec un simple code."
+  }
+}

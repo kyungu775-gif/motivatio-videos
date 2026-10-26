@@ -1,0 +1,76 @@
+{
+  "titre": "Ton téléphone est *plein* ?",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "WhatsApp",
+    "Gérer",
+    "cinq",
+    "Supprime"
+  ],
+  "scenes": [
+    {
+      "texte": "Ton téléphone est plein ? Le coupable est souvent WhatsApp.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Alerte",
+        "texte": "Espace de stockage insuffisant.",
+        "badge": "Plein"
+      }
+    },
+    {
+      "texte": "Ouvre WhatsApp, touche Paramètres, puis Stockage et données, puis Gérer le stockage.",
+      "liste": {
+        "titre": "Le chemin",
+        "items": [
+          {
+            "texte": "Paramètres",
+            "mot": "Paramètres"
+          },
+          {
+            "texte": "Stockage et données",
+            "mot": "données"
+          },
+          {
+            "texte": "Gérer le stockage",
+            "mot": "Gérer"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Tu vois les fichiers de plus de cinq mégaoctets, et les conversations qui prennent le plus de place. Commence par celles-là.",
+      "liste": {
+        "titre": "Ce que tu trouves",
+        "items": [
+          {
+            "texte": "Fichiers de plus de 5 Mo",
+            "mot": "fichiers"
+          },
+          {
+            "texte": "Conversations les plus lourdes",
+            "mot": "conversations"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Trie d'abord. Supprime les vieilles vidéos transférées et les images déjà vues. Garde seulement les souvenirs importants.",
+      "formule": [
+        "Trie",
+        "Supprime",
+        "Garde"
+      ]
+    },
+    {
+      "texte": "Enregistre cette vidéo pour la retrouver le jour où ton téléphone sera de nouveau plein.",
+      "icone": "hard-drive",
+      "label": "Enregistre la vidéo"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Ton téléphone est plein ?",
+    "legende": "Libère de la place sans application en plus 📱 WhatsApp › Paramètres › Stockage et données › Gérer le stockage. Commence par les fichiers de plus de 5 Mo et les discussions les plus lourdes. Enregistre pour plus tard 👇 #AstucesTéléphone #WhatsApp #Stockage #Android #TikTokFrancophone",
+    "sujet": "astuce téléphone – libérer le stockage WhatsApp",
+    "accroche": "Ton téléphone est plein ? Le coupable est souvent WhatsApp."
+  }
+}
