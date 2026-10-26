@@ -6,8 +6,9 @@ Usage :
 
 Rendu image par image (30 i/s) : fond animé, animations d'entrée, texte qui se tape, listes et
 formules synchronisées sur la voix, couverture du guide avec reflet, sous-titres mot à mot surlignés,
-transitions glissées, bruitages et musique lo-fi générés, voix française Kokoro avec minutage
-phonème par phonème. Le format du fichier JSON est décrit dans scripts/FORMAT.md.
+transitions glissées, bruitages et musique lo-fi générés, voix Kokoro (française par défaut,
+anglaise avec "langue": "en") avec minutage phonème par phonème. Le format du fichier JSON est
+décrit dans scripts/FORMAT.md.
 """
 import functools, hashlib, json, math, os, re, subprocess, sys, tarfile, unicodedata, urllib.request
 
@@ -20,7 +21,6 @@ import motivatio_audio as son  # noqa: E402
 W, H, FPS = 1080, 1920, 30
 CACHE = os.path.expanduser(os.environ.get("MOTIVATIO_CACHE", "~/.cache/motivatio"))
 MODELES = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/"
-VOIX = "ff_siwis"
 FONT_DIR = "/usr/share/fonts/truetype/google-fonts"
 
 AMBRE, CORAIL, VERT = (255, 181, 71), (255, 107, 107), (61, 220, 151)
@@ -30,9 +30,22 @@ TRANSITION = 0.32       # durée des transitions entre scènes (s)
 PAUSE_SCENE = 0.28      # silence entre deux scènes (s)
 CAPTION_Y = 1335        # centre des sous-titres (hors zones d'interface TikTok)
 
-# Graphies utilisées pour la voix seulement (les sous-titres gardent le texte original)
-PRONONCIATION = [(r"\bIA\b", "i a"), (r"(?i)\bprompts?\b", "prommpte"), (r"(?i)\be-mails?\b", "imèl"),
-                 (r"\bMOTIVATIO\b", "Motivatio"), (r"(?i)\bCDF\b", "francs congolais")]
+# Réglages par langue (champ "langue" du script JSON ; "fr" par défaut).
+# "prononciation" : graphies utilisées pour la voix seulement (les sous-titres gardent le texte original).
+LANGUES = {
+    "fr": {
+        "voix": "ff_siwis", "code": "fr-fr",
+        "prononciation": [(r"\bIA\b", "i a"), (r"(?i)\bprompts?\b", "prommpte"), (r"(?i)\be-mails?\b", "imèl"),
+                          (r"\bMOTIVATIO\b", "Motivatio"), (r"(?i)\bCDF\b", "francs congolais")],
+        "badge_mauvais": "Trop vague", "badge_bon": "Précis", "cta": "Écris GUIDE en commentaire",
+    },
+    "en": {
+        "voix": "af_heart", "code": "en-us",
+        "prononciation": [(r"\bMOTIVATIO\b", "Motivatio"), (r"\bCV\b", "C V"), (r"\bCVs\b", "C Vs")],
+        "badge_mauvais": "Too vague", "badge_bon": "Clear", "cta": "Comment GUIDE",
+    },
+}
+LANGUE = LANGUES["fr"]  # remplacé dans main() selon le script
 PONCT = set(",.;:!?…—-\"'«»()")
 
 
@@ -175,7 +188,7 @@ def pilule(texte, taille, fond, couleur, pad=(40, 18), graisse="bold", icone_nom
 
 # ------------------------------------------------------------------ voix et minutage
 def prononce(mot):
-    for motif, rempl in PRONONCIATION:
+    for motif, rempl in LANGUE["prononciation"]:
         mot = re.sub(motif, rempl, mot)
     return mot
 
@@ -190,7 +203,7 @@ def synthese(k, texte, vitesse):
         else:
             mots.append(j)
     tts = [prononce(m) for m in mots]
-    audio, sr, tim = k.create_timed(" ".join(tts), voice=VOIX, speed=vitesse, lang="fr-fr", trim=False)
+    audio, sr, tim = k.create_timed(" ".join(tts), voice=LANGUE["voix"], speed=vitesse, lang=LANGUE["code"], trim=False)
     groupes, cur = [], []
     for t in tim:
         if t.phoneme == " ":
@@ -198,7 +211,7 @@ def synthese(k, texte, vitesse):
         else:
             cur.append(t)
     if cur: groupes.append(cur)
-    comptes = [max(1, len(k.tokenizer.phonemize(m, "fr-fr").split())) for m in tts]
+    comptes = [max(1, len(k.tokenizer.phonemize(m, LANGUE["code"]).split())) for m in tts]
     res = []
     if sum(comptes) == len(groupes):
         i = 0
@@ -207,6 +220,8 @@ def synthese(k, texte, vitesse):
             sons = [p for p in g if p.phoneme not in PONCT and p.end > p.start] or g
             res.append({"mot": m, "debut": sons[0].start, "fin": sons[-1].end}); i += c
     else:
+        res = aligne_phonemes(k, tts, mots, tim)
+    if not res:
         log(f"minutage approximatif ({sum(comptes)} groupes attendus, {len(groupes)} obtenus)")
         d0 = tim[0].start if tim else 0.05; d1 = tim[-1].end if tim else len(audio) / sr
         poids = [len(norm(m)) + 1 for m in mots]; tot = sum(poids); t = d0
@@ -215,6 +230,47 @@ def synthese(k, texte, vitesse):
     fin = max(r["fin"] for r in res) + 0.12
     audio = audio[:int(min(len(audio), fin * sr))]
     return audio.astype(np.float32), res
+
+
+def aligne_phonemes(k, tts, mots, tim):
+    """Minutage mot par mot quand la voix fusionne des mots (ex. anglais « this one », « in the ») :
+    on aligne la suite des phonèmes de chaque mot sur la suite prononcée, phonème par phonème.
+    Retourne [] si l'alignement n'est pas fiable."""
+    import difflib
+    sons = [t for t in tim if t.phoneme != " " and t.phoneme not in PONCT and t.end > t.start]
+    if not sons:
+        return []
+    accents = "ˈˌ"
+    dit = [t.phoneme for t in sons if t.phoneme not in accents]
+    temps = [t for t in sons if t.phoneme not in accents]
+    attendu, bornes = [], []
+    for m in tts:
+        ph = [c for c in k.tokenizer.phonemize(m, LANGUE["code"]) if c not in accents and c != " " and c not in PONCT]
+        bornes.append((len(attendu), len(attendu) + len(ph))); attendu += ph
+    sm = difflib.SequenceMatcher(None, attendu, dit, autojunk=False)
+    if sm.ratio() < 0.6:
+        return []
+    corresp = {}
+    for a, b, n in sm.get_matching_blocks():
+        for j in range(n):
+            corresp[a + j] = b + j
+    res = []
+    for m, (i0, i1) in zip(mots, bornes):
+        idx = [corresp[i] for i in range(i0, i1) if i in corresp]
+        if idx:
+            res.append({"mot": m, "debut": temps[min(idx)].start, "fin": temps[max(idx)].end})
+        else:
+            res.append(None)
+    # mots sans correspondance : placés entre leurs voisins
+    for i, r in enumerate(res):
+        if r is None:
+            avant = next((res[j]["fin"] for j in range(i - 1, -1, -1) if res[j]), sons[0].start)
+            apres = next((res[j]["debut"] for j in range(i + 1, len(res)) if res[j]), sons[-1].end)
+            res[i] = {"mot": mots[i], "debut": avant, "fin": max(avant + 0.05, apres)}
+    for i in range(1, len(res)):  # ordre chronologique strict
+        if res[i]["debut"] < res[i - 1]["debut"]:
+            return []
+    return res
 
 
 def temps_du_mot(mots, cible, apres=0.0, dernier=False):
@@ -301,7 +357,7 @@ class Carte(Element):
         self.t_badge = self.t_type + self.d_type + 0.2
         self.badge = None
         if self.type in ("mauvais", "bon"):
-            txt = c.get("badge") or ("Trop vague" if self.type == "mauvais" else "Précis")
+            txt = c.get("badge") or LANGUE["badge_mauvais" if self.type == "mauvais" else "badge_bon"]
             self.badge = pilule(txt.upper(), 42, self.couleur + (255,), ENCRE if self.type == "bon" else BLANC,
                                 icone_nom="x" if self.type == "mauvais" else "check")
             self.sons.append((self.t_badge, "erreur" if self.type == "mauvais" else "ding"))
@@ -440,8 +496,12 @@ class Produit(Element):
         d.rectangle((24, 0, 38, bh), fill=(0, 0, 0, 38))
         d.text((76, 74), "MOTIVATIO", font=police(28, "bold"), fill=ENCRE + (210,))
         y = 200
-        for l in wrap(p.get("titre", "").upper(), police(92, "bold"), bw - 130):
-            d.text((76, y), l, font=police(92, "bold"), fill=ENCRE); y += 98
+        titre_couv = p.get("titre", "").upper()
+        tt = 92  # réduit la taille si un mot seul est plus large que la couverture (ex. « PRACTICAL »)
+        while tt > 56 and max((d.textlength(m, font=police(tt, "bold")) for m in titre_couv.split()), default=0) > bw - 130:
+            tt -= 4
+        for l in wrap(titre_couv, police(tt, "bold"), bw - 130):
+            d.text((76, y), l, font=police(tt, "bold"), fill=ENCRE); y += round(tt * 98 / 92)
         y += 26
         for l in wrap(p.get("sous_titre", ""), police(38, "medium"), bw - 140):
             d.text((76, y), l, font=police(38, "medium"), fill=ENCRE + (235,)); y += 52
@@ -454,7 +514,7 @@ class Produit(Element):
             db.line((x, 0, x, bh * 2), fill=int(150 * math.sin(math.pi * x / 159) ** 2))
         self.bande = bande.rotate(18, expand=True)
         self.prix = pilule(p.get("prix", ""), 58, (255, 255, 255, 250), ENCRE, pad=(52, 16)) if p.get("prix") else None
-        self.cta = pilule(p.get("cta", "Écris GUIDE en commentaire"), 46, AMBRE + (255,), ENCRE,
+        self.cta = pilule(p.get("cta", LANGUE["cta"]), 46, AMBRE + (255,), ENCRE,
                           icone_nom="message-circle", pad=(40, 16))
         self.cy = (self.haut + 40 if self.titre else 300) + bh / 2 * 0.88
         self.t_prix = 0.75
@@ -500,8 +560,9 @@ class Titre(Element):
         for m in brut:
             debut_acc = m.startswith("*")
             accent = dans_accent or debut_acc
-            dans_accent = accent and not m.endswith("*")
-            txt = m.strip("*").upper()
+            # l'accent se ferme sur « mot* », y compris suivi d'une ponctuation (« *vague*? »)
+            dans_accent = accent and not re.search(r"\*\W*$", m)
+            txt = m.replace("*", "").upper()
             w = int(ImageDraw.Draw(Image.new("L", (1, 1))).textlength(txt, font=f))
             if cur and largeur + sp + w > 940:
                 lignes.append(cur); cur, largeur = [], 0
@@ -596,11 +657,16 @@ def dessine_sous_titre(frame, morceau, t, mots_cles):
 
 # ------------------------------------------------------------------ assemblage
 def main(entree, sortie):
-    global ICONS_DIR
+    global ICONS_DIR, LANGUE
     from kokoro_onnx import Kokoro
     data = json.load(open(entree, encoding="utf-8"))
     if not data.get("scenes"):
         raise ValueError("Le script ne contient aucune scène")
+    langue = data.get("langue", "fr")
+    if langue not in LANGUES:
+        raise ValueError(f"Langue « {langue} » inconnue (attendu : {', '.join(LANGUES)})")
+    LANGUE = LANGUES[langue]
+    log(f"langue : {langue} (voix {LANGUE['voix']})")
     modele, voix, ICONS_DIR = ensure_resources()
     graine = int(hashlib.md5(data["titre"].encode()).hexdigest(), 16) % 10_000
     k = Kokoro(modele, voix)

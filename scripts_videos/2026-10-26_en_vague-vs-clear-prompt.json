@@ -1,0 +1,39 @@
+{
+  "langue": "en",
+  "titre": "Your AI answers are *vague*?",
+  "vitesse": 1.0,
+  "campagne": "30 Practical AI Prompts (EN)",
+  "mots_cles": ["role", "goal", "audience", "format", "GUIDE"],
+  "scenes": [
+    {
+      "texte": "Your AI answers are vague? Your prompt probably is too. Like this one: write a presentation about climate change.",
+      "carte": {"type": "mauvais", "etiquette": "Vague prompt", "texte": "Write a presentation about climate change."}
+    },
+    {
+      "texte": "You get an answer that is generic, far too long, and not made for your level.",
+      "liste": {"style": "croix", "titre": "The result", "items": [
+        {"texte": "Generic answer", "mot": "generic"},
+        {"texte": "Far too long", "mot": "long"},
+        {"texte": "Not made for your level", "mot": "level"}
+      ]}
+    },
+    {
+      "texte": "Give it four things instead: a role, a goal, an audience, and a format.",
+      "formule": ["Role", "Goal", "Audience", "Format"]
+    },
+    {
+      "texte": "Here is the same request, made clear. Now the answer is focused and useful.",
+      "carte": {"type": "bon", "etiquette": "Clear prompt", "texte": "You are a geography teacher. Outline a 5-minute presentation on climate change for high-school students, in 3 parts, with one real example per part."}
+    },
+    {
+      "texte": "Thirty prompts like this one are in the guide Thirty Practical AI Prompts, for four dollars ninety-nine. Comment GUIDE.",
+      "produit": {"titre": "30 Practical AI Prompts", "sous_titre": "Study · Work · Projects", "detail": "PDF guide · 27 pages", "prix": "US$4.99", "cta": "Comment GUIDE", "mot_cta": "GUIDE"}
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Your AI answers are vague?",
+    "legende": "A vague prompt gets a vague answer 🤖 Remember the formula: role + goal + audience + format. Want 30 ready-to-use prompts with examples? The guide 30 Practical AI Prompts to Save Time (PDF, 27 pages) is US$4.99. Comment GUIDE 👇 #ChatGPT #AI #AITips #Productivity #StudyTips",
+    "sujet": "AI – writing a clear prompt (EN)",
+    "accroche": "Your AI answers are vague?"
+  }
+}

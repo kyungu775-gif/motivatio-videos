@@ -4,6 +4,7 @@ Un fichier par vidéo dans `scripts_videos/AAAA-MM-JJ_slug.json`. Contrôle : `p
 
 ```json
 {
+  "langue": "fr",
   "titre": "Tu utilises *mal* ChatGPT ?",
   "vitesse": 1.06,
   "mots_cles": ["rôle", "objectif", "GUIDE"],
@@ -12,6 +13,9 @@ Un fichier par vidéo dans `scripts_videos/AAAA-MM-JJ_slug.json`. Contrôle : `p
 }
 ```
 
+- `langue` : `"fr"` (par défaut, voix française ff_siwis) ou `"en"` (voix anglaise af_heart,
+  badges « Too vague » / « Clear » et appel à l'action « Comment GUIDE » par défaut). Le texte
+  des scènes, les cartes et la légende TikTok s'écrivent alors en anglais.
 - `titre` : accroche affichée en grand au début (46 caractères max, 2 lignes). Les mots entre
   `*étoiles*` ressortent sur fond ambre.
 - `vitesse` : débit de la voix (1.0 à 1.1).

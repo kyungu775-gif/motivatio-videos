@@ -15,6 +15,8 @@ ICONS = os.path.join(CACHE, "lucide", "package", "icons")
 def check_script(path):
     errs = []
     d = json.load(open(path, encoding="utf-8"))
+    if d.get("langue", "fr") not in ("fr", "en"):
+        errs.append(f"langue « {d.get('langue')} » inconnue (attendu fr ou en)")
     titre = d.get("titre", "").replace("*", "")
     if not titre or len(titre) > 46:
         errs.append(f"titre absent ou trop long ({len(titre)} car., max 46 ; il tient sur 2 lignes)")
