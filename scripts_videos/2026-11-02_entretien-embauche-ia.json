@@ -1,0 +1,77 @@
+{
+  "titre": "Prépare ton *entretien* avec l'IA",
+  "vitesse": 1.05,
+  "campagne": "IA PRATIQUE",
+  "mots_cles": [
+    "recruteur",
+    "vrai",
+    "GUIDE"
+  ],
+  "scenes": [
+    {
+      "texte": "Un entretien d'embauche bientôt ? Entraîne-toi avec l'IA.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "La veille de l'entretien",
+        "texte": "Je ne sais pas quoi répondre…",
+        "badge": "Stress"
+      }
+    },
+    {
+      "texte": "Donne-lui le poste visé, et demande-lui de jouer le recruteur.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Prompt à copier",
+        "badge": "À copier",
+        "texte": "Tu es recruteur pour un poste de comptable junior. Pose-moi 5 questions d'entretien, une par une. Après chaque réponse, dis-moi ce qui est clair et ce que je peux améliorer."
+      }
+    },
+    {
+      "texte": "Réponds à voix haute, comme le jour de l'entretien. Puis lis ses remarques, corrige ta réponse, et recommence.",
+      "liste": {
+        "style": "coche",
+        "titre": "L'entraînement",
+        "items": [
+          {
+            "texte": "Réponds à voix haute",
+            "mot": "voix"
+          },
+          {
+            "texte": "Lis les remarques",
+            "mot": "remarques"
+          },
+          {
+            "texte": "Recommence",
+            "mot": "recommence"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Une règle : n'invente jamais une expérience. Garde seulement ce qui est vrai.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Règle d'or",
+        "texte": "Tes réponses doivent rester vraies.",
+        "badge": "Honnête"
+      }
+    },
+    {
+      "texte": "Dix prompts pour l'emploi sont dans le guide IA PRATIQUE, avec vingt autres pour les études et les projets. Douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {
+        "titre": "IA Pratique",
+        "sous_titre": "30 prompts pour gagner du temps",
+        "detail": "Guide PDF · 19 pages",
+        "prix": "12 000 CDF",
+        "cta": "Écris GUIDE en commentaire",
+        "mot_cta": "GUIDE"
+      }
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Prépare ton entretien avec l'IA",
+    "legende": "Entraîne-toi avant ton entretien 🎯 Demande à l'IA de jouer le recruteur : 5 questions, une par une, avec un retour après chaque réponse. Réponds à voix haute et reste vrai. Guide IA PRATIQUE : 30 prompts (études, emploi, projets). Écris GUIDE en commentaire 👇 #Emploi #Entretien #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "campagne IA PRATIQUE – simuler un entretien d'embauche",
+    "accroche": "Un entretien d'embauche bientôt ? Entraîne-toi avec l'IA."
+  }
+}

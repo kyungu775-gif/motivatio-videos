@@ -1,0 +1,66 @@
+{
+  "titre": "Ton idée de *projet* reste bloquée ?",
+  "vitesse": 1.05,
+  "campagne": "IA PRATIQUE",
+  "mots_cles": [
+    "idée",
+    "budget",
+    "temps",
+    "première",
+    "GUIDE"
+  ],
+  "scenes": [
+    {
+      "texte": "Ton idée de projet reste bloquée dans ta tête ?",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Mon idée",
+        "texte": "Ouvrir un petit commerce… un jour, peut-être.",
+        "badge": "Bloqué"
+      }
+    },
+    {
+      "texte": "Décris-la à l'IA avec trois informations : ton idée, ton budget, et ton temps disponible.",
+      "formule": [
+        "Idée",
+        "Budget",
+        "Temps"
+      ]
+    },
+    {
+      "texte": "Puis demande un plan simple, avec une première étape faisable cette semaine.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Prompt à copier",
+        "badge": "À copier",
+        "texte": "Voici mon idée, mon budget et mon temps libre par semaine. Propose un plan en 5 étapes. La première doit se faire en moins d'une heure, cette semaine."
+      }
+    },
+    {
+      "texte": "Fais cette première étape tout de suite. Un petit pas vaut mieux qu'un grand plan oublié.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Ton défi",
+        "texte": "Fais l'étape 1 avant dimanche.",
+        "badge": "Action"
+      }
+    },
+    {
+      "texte": "Dix prompts pour tes projets sont réunis dans le guide IA PRATIQUE, avec vingt pour les études et l'emploi. Douze mille francs congolais. Écris GUIDE en commentaire.",
+      "produit": {
+        "titre": "IA Pratique",
+        "sous_titre": "30 prompts pour gagner du temps",
+        "detail": "Guide PDF · 19 pages",
+        "prix": "12 000 CDF",
+        "cta": "Écris GUIDE en commentaire",
+        "mot_cta": "GUIDE"
+      }
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Ton idée de projet reste bloquée ?",
+    "legende": "Donne à l'IA ton idée, ton budget et ton temps disponible, puis demande un plan en 5 étapes 🚀 La première étape doit se faire en moins d'une heure, cette semaine. Guide IA PRATIQUE : 30 prompts (études, emploi, projets). Écris GUIDE en commentaire 👇 #Projet #Entrepreneuriat #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "campagne IA PRATIQUE – idée de projet en plan d'action",
+    "accroche": "Ton idée de projet reste bloquée dans ta tête ?"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "titre": "Un courrier *incompréhensible* ?",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "simples",
+    "personnelles",
+    "vérifie"
+  ],
+  "scenes": [
+    {
+      "texte": "Un courrier officiel incompréhensible ? L'IA peut te l'expliquer.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Courrier reçu",
+        "texte": "Conformément aux dispositions susmentionnées, le délai de recours court à compter de la notification…",
+        "badge": "Illisible"
+      }
+    },
+    {
+      "texte": "D'abord, cache tes données personnelles : ton nom, tes numéros, ton adresse. L'IA n'a pas besoin de savoir qui tu es.",
+      "liste": {
+        "style": "croix",
+        "titre": "À cacher",
+        "items": [
+          {
+            "texte": "Ton nom",
+            "mot": "nom"
+          },
+          {
+            "texte": "Tes numéros",
+            "mot": "numéros"
+          },
+          {
+            "texte": "Ton adresse",
+            "mot": "adresse"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Ensuite, colle le texte avec ce prompt. Tu obtiens une explication en mots simples, avec ce que tu dois faire, et la date limite.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Prompt à copier",
+        "badge": "À copier",
+        "texte": "Explique-moi ce document avec des mots simples, en 5 phrases. Dis-moi ce que je dois faire, et avant quelle date."
+      }
+    },
+    {
+      "texte": "L'IA peut se tromper. Vérifie toujours les dates et les montants dans le document original.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Prudence",
+        "texte": "Dates et montants : vérifie dans l'original.",
+        "badge": "Vérifie"
+      }
+    },
+    {
+      "texte": "Enregistre cette vidéo pour ta prochaine lettre compliquée, et partage-la à un proche qui en reçoit souvent.",
+      "icone": "bookmark",
+      "label": "Enregistre"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Un courrier incompréhensible ?",
+    "legende": "Un courrier trop compliqué ? 📄 Cache ton nom, tes numéros et ton adresse, puis demande à l'IA : « Explique-moi ce document avec des mots simples, en 5 phrases. Dis-moi ce que je dois faire, et avant quelle date. » Vérifie toujours les dates et montants. Enregistre pour plus tard 👇 #AstucesIA #ChatGPT #IntelligenceArtificielle #Administratif #TikTokFrancophone",
+    "sujet": "IA au quotidien – comprendre un document compliqué",
+    "accroche": "Un courrier officiel incompréhensible ? L'IA peut te l'expliquer."
+  }
+}

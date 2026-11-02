@@ -1,0 +1,75 @@
+{
+  "titre": "Tu n'arrives pas à te *concentrer* ?",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "Pomodoro",
+    "travail",
+    "pause",
+    "seule"
+  ],
+  "scenes": [
+    {
+      "texte": "Tu n'arrives pas à rester concentré ? Essaie cette méthode simple.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Ma séance de travail",
+        "texte": "Je commence… je regarde mon téléphone… je recommence…",
+        "badge": "Distrait"
+      }
+    },
+    {
+      "texte": "C'est la méthode Pomodoro : vingt-cinq minutes de travail, puis cinq minutes de pause.",
+      "liste": {
+        "style": "coche",
+        "titre": "Méthode Pomodoro",
+        "items": [
+          {
+            "texte": "25 min de travail",
+            "mot": "travail"
+          },
+          {
+            "texte": "5 min de pause",
+            "mot": "pause"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Pendant les vingt-cinq minutes : une seule tâche, et ton téléphone loin de toi, en silencieux. Une alarme suffit pour savoir quand t'arrêter.",
+      "liste": {
+        "style": "coche",
+        "titre": "Pendant le travail",
+        "items": [
+          {
+            "texte": "Une seule tâche",
+            "mot": "seule"
+          },
+          {
+            "texte": "Téléphone loin de toi",
+            "mot": "téléphone"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Après quatre séances, prends une vraie pause de quinze à vingt minutes.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Pause longue",
+        "texte": "Après 4 séances : 15 à 20 min de vraie pause.",
+        "badge": "Recharge"
+      }
+    },
+    {
+      "texte": "Écris en commentaire la tâche que tu vas faire pendant ta première séance, et enregistre la vidéo.",
+      "icone": "message-circle",
+      "label": "Commente"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Tu n'arrives pas à te concentrer ?",
+    "legende": "La méthode Pomodoro ⏱️ 25 minutes sur une seule tâche, téléphone loin de toi, puis 5 minutes de pause. Après 4 séances, une vraie pause de 15 à 20 minutes. Quelle tâche tu fais en premier ? 👇 #Productivité #Concentration #Études #Pomodoro #TikTokFrancophone",
+    "sujet": "productivité – méthode Pomodoro",
+    "accroche": "Tu n'arrives pas à rester concentré ? Essaie ça."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "titre": "Ton téléphone *perdu* demain ?",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "Google",
+    "localisation",
+    "code",
+    "sonner",
+    "verrouiller",
+    "effacer"
+  ],
+  "scenes": [
+    {
+      "texte": "Ton téléphone disparaît demain ? Prépare-toi dès aujourd'hui.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Situation",
+        "texte": "Mon téléphone a disparu… et maintenant ?",
+        "badge": "Panique"
+      }
+    },
+    {
+      "texte": "Sur Android, vérifie trois choses : un compte Google, la localisation activée, et un code de verrouillage.",
+      "liste": {
+        "style": "coche",
+        "titre": "À vérifier",
+        "items": [
+          {
+            "texte": "Un compte Google",
+            "mot": "Google"
+          },
+          {
+            "texte": "Localisation activée",
+            "mot": "localisation"
+          },
+          {
+            "texte": "Un code de verrouillage",
+            "mot": "code"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "En cas de perte, ouvre le site Localiser mon appareil de Google, depuis n'importe quel navigateur. Ton téléphone doit être allumé et connecté.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Depuis un autre appareil",
+        "texte": "google.com/android/find",
+        "badge": "Gratuit"
+      }
+    },
+    {
+      "texte": "Tu peux le faire sonner, même en silencieux, le verrouiller avec un message, ou effacer tes données.",
+      "formule": [
+        "Sonner",
+        "Verrouiller",
+        "Effacer"
+      ]
+    },
+    {
+      "texte": "Partage cette vidéo à quelqu'un qui perd souvent son téléphone.",
+      "icone": "share-2",
+      "label": "Partage"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Ton téléphone perdu demain ?",
+    "legende": "Android : vérifie aujourd'hui ton compte Google, la localisation et ton code de verrouillage 📱 En cas de perte, va sur google.com/android/find depuis un autre appareil : faire sonner, verrouiller ou effacer. Le téléphone doit être allumé et connecté. Partage à ceux qui perdent tout 👇 #AstucesTéléphone #Android #SécuritéEnLigne #Google #TikTokFrancophone",
+    "sujet": "astuce téléphone – Localiser mon appareil (Android)",
+    "accroche": "Ton téléphone disparaît demain ? Prépare-toi dès aujourd'hui."
+  }
+}
