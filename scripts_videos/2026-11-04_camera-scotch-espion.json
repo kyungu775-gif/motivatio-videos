@@ -1,0 +1,53 @@
+{
+  "titre": "Pourquoi cacher ta *caméra* ?",
+  "vitesse": 1.05,
+  "mots_cles": ["caméra", "scotch", "micro", "mises à jour", "Isolement"],
+  "scenes": [
+    {
+      "texte": "Pourquoi certains dirigeants mettent du scotch sur leur caméra ?",
+      "icone": "camera-off",
+      "label": "Caméra cachée"
+    },
+    {
+      "texte": "Certains logiciels espions très avancés peuvent allumer la caméra à distance, sans aucun clic et sans aucun signe visible.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Le risque",
+        "texte": "Caméra activée à distance, sans clic, sans voyant",
+        "badge": "Invisible"
+      }
+    },
+    {
+      "texte": "Un logiciel peut être contourné. Mais un morceau de scotch opaque, aucun pirate ne peut le retirer.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "La parade",
+        "texte": "Un scotch opaque sur l'objectif",
+        "badge": "Efficace"
+      }
+    },
+    {
+      "texte": "Attention : le scotch ne bloque pas le micro. Fais donc tes mises à jour, et sur iPhone, active le mode Isolement si tu es exposé.",
+      "liste": {
+        "style": "coche",
+        "titre": "En plus du scotch",
+        "items": [
+          {"texte": "Pense aussi au micro", "mot": "micro"},
+          {"texte": "Fais les mises à jour", "mot": "mises"},
+          {"texte": "Mode Isolement (iPhone)", "mot": "Isolement"}
+        ]
+      }
+    },
+    {
+      "texte": "Enregistre cette vidéo et partage-la à quelqu'un qui garde des documents sensibles.",
+      "icone": "bookmark",
+      "label": "Enregistre"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Pourquoi cacher ta caméra ?",
+    "legende": "Certains logiciels espions avancés peuvent activer la caméra d'un téléphone à distance, sans clic ni signe visible 📷 Un scotch opaque sur l'objectif, aucun logiciel ne peut le retirer. Mais il ne bloque pas le micro : fais tes mises à jour et, sur iPhone, regarde le mode Isolement (Réglages > Confidentialité et sécurité). Enregistre et partage 👇 #SécuritéEnLigne #AstucesTéléphone #Confidentialité #iPhone #TikTokFrancophone",
+    "sujet": "sécurité en ligne – cacher la caméra du téléphone",
+    "accroche": "Pourquoi certains dirigeants mettent du scotch sur leur caméra ?"
+  }
+}
