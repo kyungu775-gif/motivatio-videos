@@ -2,6 +2,25 @@
 
 Le bilan le plus récent est en haut.
 
+## 09/11/2026 — Bilan semaine 3 (statistiques Metricool, 30 derniers jours)
+
+- **Données** : semaine du 03 au 08/11, 9 vidéos remontées dans Metricool (2 par jour du 04 au 07/11, 1 le 08/11),
+  1 373 vues au total. « Planifie ta semaine » (08/11 18 h) et « 3 façons » (09/11 10 h) n'apparaissent pas encore.
+- **Meilleure vidéo** : « Prépare ton entretien avec l'IA » (campagne, 04/11) — 403 vues, 28 j'aime, 2 commentaires.
+- **Plus faibles** : « Révise autrement avec l'IA » (campagne, 08/11, prix encore dans la légende) — 75 vues ;
+  « Protège ton WhatsApp » (conseil, 05/11) — 85 vues, 2 j'aime.
+- **Autres** : stockage WhatsApp 179, téléphone perdu 160, caméra 134, Pomodoro 118, idée de projet 116, courrier 103.
+- **Compte** : 54 abonnés le 07/11 (39 le 02/11, soit +15 en une semaine, dont +7 le 03/11). Visites de profil : 0 enregistrée.
+- **Campagne vs conseils** : campagne 3 vidéos, 594 vues (moyenne 198) ; conseils 6 vidéos, 779 vues (moyenne 130).
+  Pour la première fois, une vidéo de campagne est la meilleure : le thème emploi semble porteur.
+- **Hypothèses** : 1) le sujet compte plus que la mention du guide (emploi > études) ; 2) deux vidéos le même jour
+  se font concurrence ; 3) les légendes sans prix ne freinent pas (403 et 116 vues, contre 75 avec prix).
+- **Décisions pour la semaine du 10/11** :
+  1. Une seule vidéo par jour, du mardi au samedi, à 10 h (meilleur créneau Metricool chaque jour).
+  2. Garder les légendes sans prix ; le prix reste seulement dans la dernière scène.
+  3. Sujets proches du quotidien et de l'argent : données mobiles, traduction, vente sur WhatsApp, arnaques par SMS,
+     et une notion de cours expliquée par l'IA.
+
 ## 02/11/2026 — Bilan semaine 2 (statistiques Metricool, 30 derniers jours)
 
 - **Données** : 4 vidéos publiées sur 30 jours (24/10 ×2, 25/10, 26/10 en anglais). Les 5 brouillons
