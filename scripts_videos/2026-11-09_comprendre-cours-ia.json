@@ -1,0 +1,64 @@
+{
+  "titre": "Un *cours* que tu ne comprends pas ?",
+  "vitesse": 1.05,
+  "campagne": "IA PRATIQUE",
+  "mots_cles": [
+    "exemple",
+    "mots",
+    "GUIDE"
+  ],
+  "scenes": [
+    {
+      "texte": "Un cours que tu ne comprends pas ? Essaie ça.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Mon cours",
+        "texte": "La photosynthèse… je relis pour la cinquième fois.",
+        "badge": "Perdu"
+      }
+    },
+    {
+      "texte": "Demande à l'IA de t'expliquer la notion avec un exemple de la vie de tous les jours.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Prompt à copier",
+        "badge": "À copier",
+        "texte": "Explique-moi la photosynthèse avec des mots simples et un exemple du quotidien. Puis pose-moi une question pour vérifier que j'ai compris."
+      }
+    },
+    {
+      "texte": "Comprends l'exemple, explique avec tes mots, et revois seulement ce qui bloque.",
+      "formule": [
+        "Comprends",
+        "Explique",
+        "Revois"
+      ]
+    },
+    {
+      "texte": "Attention : compare toujours avec ton cours, parce que l'IA peut se tromper.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Règle d'or",
+        "texte": "L'IA peut se tromper : compare avec ton cours.",
+        "badge": "Vérifie"
+      }
+    },
+    {
+      "texte": "Dix prompts pour les études sont dans le guide IA PRATIQUE, avec vingt autres pour l'emploi et les projets. Écris GUIDE en commentaire.",
+      "produit": {
+        "titre": "IA Pratique",
+        "sous_titre": "30 prompts pour gagner du temps",
+        "detail": "Guide PDF · 19 pages",
+        "prix": "12 000 CDF",
+        "cta": "Écris GUIDE en commentaire",
+        "mot_cta": "GUIDE"
+      }
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Un cours que tu ne comprends pas ?",
+    "legende": "Bloqué sur une notion ? 📚 Demande à l'IA de l'expliquer avec des mots simples et un exemple du quotidien, puis de te poser une question pour vérifier. Compare toujours avec ton cours. Guide IA PRATIQUE : 30 prompts (études, emploi, projets). Écris GUIDE en commentaire 👇 #Études #Révisions #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "campagne IA PRATIQUE – comprendre une notion difficile",
+    "accroche": "Un cours que tu ne comprends pas ? Essaie ça."
+  }
+}

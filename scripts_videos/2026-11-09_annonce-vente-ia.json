@@ -1,0 +1,77 @@
+{
+  "titre": "Tu vends sur *WhatsApp* ?",
+  "vitesse": 1.05,
+  "campagne": "IA PRATIQUE",
+  "mots_cles": [
+    "annonce",
+    "prix",
+    "GUIDE"
+  ],
+  "scenes": [
+    {
+      "texte": "Tu vends quelque chose sur WhatsApp ? Ton annonce peut être plus claire.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Mon statut",
+        "texte": "Je vends des sacs. Prix en privé.",
+        "badge": "Flou"
+      }
+    },
+    {
+      "texte": "Demande à l'IA de rédiger une annonce courte, avec les vraies informations.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Prompt à copier",
+        "badge": "À copier",
+        "texte": "Écris une annonce courte pour vendre des sacs en pagne faits main, à Kinshasa. Indique le prix, la livraison et comment commander. Ton simple, trois emojis maximum."
+      }
+    },
+    {
+      "texte": "Une bonne annonce dit trois choses : le prix, la livraison, et comment commander.",
+      "liste": {
+        "style": "coche",
+        "titre": "Une bonne annonce",
+        "items": [
+          {
+            "texte": "Le prix",
+            "mot": "prix"
+          },
+          {
+            "texte": "La livraison",
+            "mot": "livraison"
+          },
+          {
+            "texte": "Comment commander",
+            "mot": "commander"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Relis tout avant de publier : le prix et les délais doivent être vrais.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Règle d'or",
+        "texte": "Ne promets que ce que tu peux livrer.",
+        "badge": "Honnête"
+      }
+    },
+    {
+      "texte": "Dix prompts pour tes projets sont dans le guide IA PRATIQUE, avec vingt autres pour les études et l'emploi. Écris GUIDE en commentaire.",
+      "produit": {
+        "titre": "IA Pratique",
+        "sous_titre": "30 prompts pour gagner du temps",
+        "detail": "Guide PDF · 19 pages",
+        "prix": "12 000 CDF",
+        "cta": "Écris GUIDE en commentaire",
+        "mot_cta": "GUIDE"
+      }
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Tu vends sur WhatsApp ?",
+    "legende": "Une annonce de vente plus claire en 1 minute 🛍️ Donne à l'IA ton produit, ta ville, ton prix et ta livraison, et demande une annonce courte. Relis tout : le prix et les délais doivent être vrais. Guide IA PRATIQUE : 30 prompts (études, emploi, projets). Écris GUIDE en commentaire 👇 #Business #WhatsApp #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "campagne IA PRATIQUE – rédiger une annonce de vente",
+    "accroche": "Tu vends quelque chose sur WhatsApp ?"
+  }
+}

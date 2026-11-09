@@ -1,0 +1,70 @@
+{
+  "titre": "*Traduis* avec ton appareil photo",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "Lens",
+    "Traduire",
+    "photo"
+  ],
+  "scenes": [
+    {
+      "texte": "Un texte en anglais que tu ne comprends pas ? Ton téléphone peut le traduire en quelques secondes.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Notice en anglais",
+        "texte": "Press and hold the power button for 10 seconds.",
+        "badge": "Incompris"
+      }
+    },
+    {
+      "texte": "Ouvre Google Lens, choisis Traduire, puis vise le texte avec la caméra.",
+      "liste": {
+        "style": "coche",
+        "titre": "Trois gestes",
+        "items": [
+          {
+            "texte": "Ouvre Google Lens",
+            "mot": "Lens"
+          },
+          {
+            "texte": "Choisis « Traduire »",
+            "mot": "Traduire"
+          },
+          {
+            "texte": "Vise le texte",
+            "mot": "vise"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "La traduction en français s'affiche directement sur l'image, à la place du texte d'origine.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Sur ton écran",
+        "texte": "Appuie sur le bouton marche pendant 10 secondes.",
+        "badge": "Traduit"
+      }
+    },
+    {
+      "texte": "Ça marche aussi avec une photo ou une capture d'écran déjà dans ta galerie. Pratique pour une notice ou un message.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Astuce",
+        "texte": "Marche aussi avec une photo déjà prise.",
+        "badge": "Galerie"
+      }
+    },
+    {
+      "texte": "Enregistre la vidéo pour l'avoir sous la main le jour où tu en as besoin.",
+      "icone": "bookmark",
+      "label": "Enregistre"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Traduis avec ton appareil photo",
+    "legende": "Un texte en anglais incompréhensible ? 📷 Ouvre Google Lens, choisis « Traduire » et vise le texte : la traduction s'affiche sur l'image. Ça marche aussi avec une photo de ta galerie. Enregistre pour plus tard 👇 #AstucesTéléphone #GoogleLens #Traduction #AstucesIA #TikTokFrancophone",
+    "sujet": "IA au quotidien – traduire avec Google Lens",
+    "accroche": "Un texte en anglais que tu ne comprends pas ?"
+  }
+}

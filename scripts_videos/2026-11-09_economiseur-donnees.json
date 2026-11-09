@@ -1,0 +1,70 @@
+{
+  "titre": "Tes *données* finissent trop vite ?",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "économiseur",
+    "WhatsApp",
+    "vidéos"
+  ],
+  "scenes": [
+    {
+      "texte": "Tes données mobiles finissent trop vite ? Voici le réglage à faire tout de suite.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Mon forfait internet",
+        "texte": "Acheté lundi… déjà vide mercredi.",
+        "badge": "Vide"
+      }
+    },
+    {
+      "texte": "Active l'économiseur de données. Les applications qui tournent en arrière-plan consomment alors beaucoup moins.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Le réglage",
+        "texte": "Économiseur de données : activé",
+        "badge": "Gratuit"
+      }
+    },
+    {
+      "texte": "Ouvre les Paramètres de ton téléphone, tape économiseur dans la barre de recherche, puis active ce réglage.",
+      "liste": {
+        "style": "coche",
+        "titre": "En trente secondes",
+        "items": [
+          {
+            "texte": "Ouvre les Paramètres",
+            "mot": "Paramètres"
+          },
+          {
+            "texte": "Cherche « économiseur »",
+            "mot": "recherche"
+          },
+          {
+            "texte": "Active le réglage",
+            "mot": "active"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Dans WhatsApp aussi, va dans Stockage et données, et coupe le téléchargement automatique des vidéos sur données mobiles.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Bonus WhatsApp",
+        "texte": "Paramètres › Stockage et données › Téléchargement auto des médias : décoche Vidéos.",
+        "badge": "Économie"
+      }
+    },
+    {
+      "texte": "Abonne-toi pour d'autres astuces téléphone simples et utiles.",
+      "icone": "user-plus",
+      "label": "Abonne-toi"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Tes données finissent trop vite ?",
+    "legende": "Ton forfait internet fond trop vite ? 📶 1) Paramètres › cherche « économiseur de données » › active. 2) WhatsApp › Paramètres › Stockage et données : décoche le téléchargement auto des vidéos sur données mobiles. Abonne-toi pour d'autres astuces 👇 #AstucesTéléphone #Android #DonnéesMobiles #WhatsApp #TikTokFrancophone",
+    "sujet": "astuce téléphone – économiseur de données",
+    "accroche": "Tes données mobiles finissent trop vite ?"
+  }
+}

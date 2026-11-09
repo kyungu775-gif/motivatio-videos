@@ -1,0 +1,71 @@
+{
+  "titre": "Un *lien* reçu par SMS ? Attention",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "urgence",
+    "lien",
+    "code",
+    "officielle"
+  ],
+  "scenes": [
+    {
+      "texte": "Un SMS te demande de cliquer vite, sinon ton compte sera bloqué ? Arrête-toi.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "SMS reçu",
+        "texte": "Ton compte sera bloqué aujourd'hui. Clique ici : bit.ly/…",
+        "badge": "Arnaque"
+      }
+    },
+    {
+      "texte": "Trois signes doivent t'alerter : un message urgent, un lien inconnu, et une demande de code.",
+      "liste": {
+        "style": "croix",
+        "titre": "Signes d'arnaque",
+        "items": [
+          {
+            "texte": "Un message urgent",
+            "mot": "urgent"
+          },
+          {
+            "texte": "Un lien inconnu",
+            "mot": "lien"
+          },
+          {
+            "texte": "Une demande de code",
+            "mot": "code"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Ne clique pas sur le lien. Ouvre toi-même l'application officielle, ou appelle le numéro officiel du service.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Le bon réflexe",
+        "texte": "Je ne clique pas. J'ouvre moi-même l'appli officielle.",
+        "badge": "Sécurisé"
+      }
+    },
+    {
+      "texte": "Et ton code secret ne se donne jamais. À personne, même à quelqu'un qui dit travailler pour ta banque.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Règle d'or",
+        "texte": "Ton code PIN ne se donne jamais, à personne.",
+        "badge": "Secret"
+      }
+    },
+    {
+      "texte": "Partage cette vidéo à quelqu'un de ta famille, ça peut lui éviter une arnaque.",
+      "icone": "share-2",
+      "label": "Partage"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Un lien reçu par SMS ? Attention",
+    "legende": "3 signes d'un SMS d'arnaque 🚨 l'urgence, un lien inconnu, une demande de code. Ne clique pas : ouvre toi-même l'appli officielle ou appelle le numéro officiel. Ton code PIN ne se donne jamais. Partage à ta famille 👇 #SécuritéEnLigne #Arnaque #AstucesTéléphone #SMS #TikTokFrancophone",
+    "sujet": "sécurité en ligne – reconnaître un SMS avec un faux lien",
+    "accroche": "Un SMS te demande de cliquer vite ? Arrête-toi."
+  }
+}
