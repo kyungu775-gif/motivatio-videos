@@ -1,0 +1,64 @@
+{
+  "titre": "Un *exposé* à présenter bientôt ?",
+  "vitesse": 1.05,
+  "campagne": "IA PRATIQUE",
+  "mots_cles": [
+    "plan",
+    "questions",
+    "GUIDE"
+  ],
+  "scenes": [
+    {
+      "texte": "Un exposé bientôt, et tu as peur des questions ?",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Ma préparation",
+        "texte": "Je lis mes notes la veille… et j'espère.",
+        "badge": "Risqué"
+      }
+    },
+    {
+      "texte": "Colle ton plan dans l'IA, et demande-lui de jouer ton professeur.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Prompt à copier",
+        "badge": "À copier",
+        "texte": "Voici le plan de mon exposé. Joue mon professeur : pose-moi cinq questions difficiles, une par une, et attends ma réponse."
+      }
+    },
+    {
+      "texte": "Réponds à voix haute, sans lire tes notes. Tu vois tout de suite les parties que tu maîtrises mal.",
+      "formule": [
+        "Question",
+        "Réponse",
+        "Correction"
+      ]
+    },
+    {
+      "texte": "Vérifie les corrections avec ton cours : l'IA peut se tromper.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Règle d'or",
+        "texte": "Ton cours reste la référence.",
+        "badge": "Vérifie"
+      }
+    },
+    {
+      "texte": "Dix prompts pour les études sont dans le guide IA PRATIQUE, avec vingt autres pour l'emploi et les projets. Écris GUIDE en commentaire.",
+      "produit": {
+        "titre": "IA Pratique",
+        "sous_titre": "30 prompts pour gagner du temps",
+        "detail": "Guide PDF · 19 pages",
+        "prix": "12 000 CDF",
+        "cta": "Écris GUIDE en commentaire",
+        "mot_cta": "GUIDE"
+      }
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Un exposé à présenter bientôt ?",
+    "legende": "Entraîne-toi avant ton exposé 🎤 Colle ton plan dans l'IA et demande-lui de jouer ton professeur : 5 questions difficiles, une par une. Réponds à voix haute, puis vérifie avec ton cours. Guide IA PRATIQUE : 30 prompts (études, emploi, projets). Écris GUIDE en commentaire 👇 #Études #Exposé #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "campagne IA PRATIQUE – préparer un exposé oral",
+    "accroche": "Un exposé bientôt, et tu as peur des questions ?"
+  }
+}

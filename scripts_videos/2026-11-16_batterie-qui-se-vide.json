@@ -1,0 +1,82 @@
+{
+  "titre": "Ta *batterie* se vide trop vite ?",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "batterie",
+    "luminosité",
+    "coupable"
+  ],
+  "scenes": [
+    {
+      "texte": "Ta batterie se vide avant midi ? Cherche d'abord le coupable.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Mon téléphone",
+        "texte": "Chargé à cent pour cent… déjà quinze pour cent à midi.",
+        "badge": "Vide"
+      }
+    },
+    {
+      "texte": "Ouvre les Paramètres, puis Batterie, et regarde quelle application consomme le plus.",
+      "liste": {
+        "style": "coche",
+        "titre": "Trouver le coupable",
+        "items": [
+          {
+            "texte": "Ouvre les Paramètres",
+            "mot": "Paramètres"
+          },
+          {
+            "texte": "Va dans Batterie",
+            "mot": "Batterie"
+          },
+          {
+            "texte": "Regarde qui consomme",
+            "mot": "consomme"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Une application que tu utilises peu est en haut de la liste ? Ferme-la, limite-la, ou désinstalle-la.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Le test",
+        "texte": "Appli rarement utilisée en tête de liste = à vérifier.",
+        "badge": "Suspect"
+      }
+    },
+    {
+      "texte": "Ensuite, trois gestes simples : baisse la luminosité, coupe le Bluetooth quand tu ne l'utilises pas, et active le mode économie.",
+      "liste": {
+        "style": "coche",
+        "titre": "Trois gestes",
+        "items": [
+          {
+            "texte": "Baisse la luminosité",
+            "mot": "luminosité"
+          },
+          {
+            "texte": "Coupe le Bluetooth inutile",
+            "mot": "Bluetooth"
+          },
+          {
+            "texte": "Active le mode économie",
+            "mot": "économie"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Partage cette astuce à quelqu'un dont le téléphone s'éteint toujours avant le soir.",
+      "icone": "share-2",
+      "label": "Partage"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Ta batterie se vide trop vite ?",
+    "legende": "Trouve ce qui vide ta batterie 🔋 Paramètres › Batterie › utilisation par appli. Une appli peu utilisée en haut de la liste ? À vérifier. Puis : luminosité plus basse, Bluetooth coupé, économie d'énergie. Partage à quelqu'un dont le téléphone meurt toujours 👇 #AstucesTéléphone #Batterie #Android #Smartphone #TikTokFrancophone",
+    "sujet": "astuce téléphone – trouver ce qui vide la batterie",
+    "accroche": "Ta batterie se vide avant midi ? Cherche d'abord le coupable."
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "titre": "Ta journée *t'échappe* ?",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "trois",
+    "veille",
+    "première"
+  ],
+  "scenes": [
+    {
+      "texte": "Tu finis la journée sans savoir ce que tu as fait ?",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Ma journée",
+        "texte": "Messages, imprévus, réseaux… et rien d'important de fait.",
+        "badge": "Perdue"
+      }
+    },
+    {
+      "texte": "Le soir, prends une minute et écris seulement trois tâches pour demain. Pas dix, juste trois.",
+      "formule": [
+        "Le soir",
+        "Trois tâches",
+        "Demain"
+      ]
+    },
+    {
+      "texte": "Mets en premier la plus importante, pas la plus facile. C'est elle qui fait avancer ta journée.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Ma liste pour demain",
+        "texte": "Finir le dossier — puis appeler le client — puis réviser le cours.",
+        "badge": "Clair"
+      }
+    },
+    {
+      "texte": "Le matin, commence par la première tâche, avant d'ouvrir tes messages et tes réseaux.",
+      "liste": {
+        "style": "coche",
+        "titre": "Le matin",
+        "items": [
+          {
+            "texte": "Tâche numéro un d'abord",
+            "mot": "première"
+          },
+          {
+            "texte": "Messages ensuite",
+            "mot": "messages"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Et toi, quelle est ta tâche numéro un pour demain ? Dis-le en commentaire.",
+      "icone": "message-circle",
+      "label": "Commente"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Ta journée t'échappe ?",
+    "legende": "Une minute le soir suffit 📝 Écris 3 tâches pour demain, la plus importante en premier. Le matin, commence par elle avant d'ouvrir tes messages. Quelle est ta tâche n°1 pour demain ? 👇 #Productivité #Organisation #Habitudes #Motivation #TikTokFrancophone",
+    "sujet": "productivité – trois tâches préparées la veille",
+    "accroche": "Tu finis la journée sans savoir ce que tu as fait ?"
+  }
+}

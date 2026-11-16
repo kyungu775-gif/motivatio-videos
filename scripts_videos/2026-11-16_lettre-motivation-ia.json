@@ -1,0 +1,77 @@
+{
+  "titre": "Une lettre *banale* ?",
+  "vitesse": 1.05,
+  "campagne": "IA PRATIQUE",
+  "mots_cles": [
+    "offre",
+    "exemples",
+    "GUIDE"
+  ],
+  "scenes": [
+    {
+      "texte": "Ta lettre de motivation ressemble à toutes les autres ?",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Ma lettre",
+        "texte": "Je suis motivé, sérieux et dynamique…",
+        "badge": "Banal"
+      }
+    },
+    {
+      "texte": "Donne à l'IA l'offre d'emploi et tes vraies expériences, sans ton nom ni ton numéro.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Prompt à copier",
+        "badge": "À copier",
+        "texte": "Voici une offre d'emploi et mes expériences. Écris une lettre courte qui relie trois de mes expériences aux besoins de l'offre. N'invente rien."
+      }
+    },
+    {
+      "texte": "Une bonne lettre montre trois choses : ce que tu as fait, ce que tu sais faire, et pourquoi ce poste.",
+      "liste": {
+        "style": "coche",
+        "titre": "Une bonne lettre",
+        "items": [
+          {
+            "texte": "Ce que tu as fait",
+            "mot": "fait"
+          },
+          {
+            "texte": "Ce que tu sais faire",
+            "mot": "sais"
+          },
+          {
+            "texte": "Pourquoi ce poste",
+            "mot": "poste"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Relis tout, et réécris avec tes mots. Chaque phrase doit être vraie.",
+      "carte": {
+        "type": "info",
+        "etiquette": "Règle d'or",
+        "texte": "L'IA propose, c'est toi qui signes.",
+        "badge": "Honnête"
+      }
+    },
+    {
+      "texte": "Dix prompts pour l'emploi sont dans le guide IA PRATIQUE, avec vingt autres pour les études et les projets. Écris GUIDE en commentaire.",
+      "produit": {
+        "titre": "IA Pratique",
+        "sous_titre": "30 prompts pour gagner du temps",
+        "detail": "Guide PDF · 19 pages",
+        "prix": "12 000 CDF",
+        "cta": "Écris GUIDE en commentaire",
+        "mot_cta": "GUIDE"
+      }
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Ta lettre de motivation est banale ?",
+    "legende": "Une lettre de motivation moins banale ✍️ Donne à l'IA l'offre et tes vraies expériences (sans nom ni numéro), et demande une lettre courte qui relie 3 expériences à l'offre. Relis et réécris avec tes mots. Guide IA PRATIQUE : 30 prompts (études, emploi, projets). Écris GUIDE en commentaire 👇 #Emploi #LettreDeMotivation #ChatGPT #AstucesIA #TikTokFrancophone",
+    "sujet": "campagne IA PRATIQUE – lettre de motivation",
+    "accroche": "Ta lettre de motivation ressemble à toutes les autres ?"
+  }
+}

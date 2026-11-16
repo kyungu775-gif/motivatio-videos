@@ -1,0 +1,69 @@
+{
+  "titre": "Tes applis t'*écoutent* ?",
+  "vitesse": 1.05,
+  "mots_cles": [
+    "autorisations",
+    "micro",
+    "position"
+  ],
+  "scenes": [
+    {
+      "texte": "Une simple lampe torche qui veut ton micro et ta position ? Ce n'est pas normal.",
+      "carte": {
+        "type": "mauvais",
+        "etiquette": "Appli Lampe torche",
+        "texte": "Autoriser l'accès au micro et à ta position ?",
+        "badge": "Suspect"
+      }
+    },
+    {
+      "texte": "Ouvre les Paramètres de ton téléphone, cherche le mot autorisations, puis ouvre le gestionnaire.",
+      "liste": {
+        "style": "coche",
+        "titre": "En trente secondes",
+        "items": [
+          {
+            "texte": "Ouvre les Paramètres",
+            "mot": "Paramètres"
+          },
+          {
+            "texte": "Cherche « autorisations »",
+            "mot": "cherche"
+          },
+          {
+            "texte": "Ouvre le gestionnaire",
+            "mot": "gestionnaire"
+          }
+        ]
+      }
+    },
+    {
+      "texte": "Regarde trois accès sensibles : la position, le micro et la caméra.",
+      "formule": [
+        "Position",
+        "Micro",
+        "Caméra"
+      ]
+    },
+    {
+      "texte": "Pour chaque application, pose-toi une question : en a-t-elle vraiment besoin pour fonctionner ? Sinon, choisis Ne pas autoriser.",
+      "carte": {
+        "type": "bon",
+        "etiquette": "Le bon réflexe",
+        "texte": "Position : seulement si l'appli est utilisée. Micro : ne pas autoriser.",
+        "badge": "Protégé"
+      }
+    },
+    {
+      "texte": "Enregistre cette vidéo, et fais le tri ce soir. Ça prend deux minutes.",
+      "icone": "bookmark",
+      "label": "Enregistre"
+    }
+  ],
+  "tiktok": {
+    "titre_tiktok": "Tes applis t'écoutent ?",
+    "legende": "Une appli lampe torche n'a pas besoin de ton micro 🔐 Paramètres › cherche « autorisations » › vérifie la position, le micro et la caméra. Si l'appli n'en a pas besoin : Ne pas autoriser. Enregistre et fais le tri ce soir 👇 #SécuritéEnLigne #AstucesTéléphone #Android #Confidentialité #TikTokFrancophone",
+    "sujet": "sécurité en ligne – vérifier les autorisations des applications",
+    "accroche": "Une lampe torche qui veut ton micro ? Ce n'est pas normal."
+  }
+}
