@@ -7,11 +7,11 @@ Le bilan le plus récent est en haut.
 - **Données** : semaine du 09 au 15/11, **1 seule vidéo publiée** : « 3 façons de gagner du temps avec l'IA »
   (campagne, 09/11 10 h) — 128 vues, 5 j'aime, 0 commentaire. Les 5 brouillons prévus du 10 au 14/11
   (données mobiles, cours, Google Lens, annonce WhatsApp, SMS) n'ont pas été validés : ils sont toujours en brouillon.
-- **Sur 30 jours** : 15 vidéos, 2 772 vues. Meilleures : « Tu utilises l'IA uniquement pour… » (conseil, 440 vues)
+- **Sur 30 jours** : 15 vidéos, 2 538 vues. Meilleures : « Tu utilises l'IA uniquement pour… » (conseil, 440 vues)
   et « Prépare ton entretien avec l'IA » (campagne, 409 vues, 2 commentaires). Plus faible : « Protège ton WhatsApp » (85 vues).
 - **Compte** : 60 abonnés le 14/11 (54 le 07/11, soit +6 sans nouvelle vidéo). Visites de profil : 0 enregistrée.
-- **Campagne vs conseils (30 j)** : campagne 8 vidéos, 1 288 vues (moyenne 161) ; conseils 7 vidéos, 1 484 vues
-  (moyenne 212, dont 1 vidéo anglaise comptée en campagne). L'emploi reste le meilleur thème de campagne.
+- **Campagne vs conseils (30 j)** : campagne 8 vidéos, 1 286 vues (moyenne 161) ; conseils 7 vidéos, 1 252 vues
+  (moyenne 179, dont 1 vidéo anglaise comptée en campagne). L'emploi reste le meilleur thème de campagne.
 - **Hypothèses** : 1) la pause de publication freine la croissance : il faut valider les brouillons à temps ;
   2) les sujets emploi et sécurité du téléphone attirent plus que les sujets études ; 3) 1 vidéo par jour à 10 h reste le bon rythme.
 - **Décisions pour la semaine du 17/11** :
