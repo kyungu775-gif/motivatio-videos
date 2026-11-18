@@ -54,7 +54,10 @@ THEMES = {
                   "marque": "M O T I V A T I O"},
     "gta6": {"accent": (255, 214, 10), "accent2": (255, 45, 135),
              "fonds": [((10, 6, 24), (44, 10, 62)), ((8, 10, 30), (52, 12, 70)), ((14, 6, 28), (60, 14, 58))],
-             "marque": "UNOFFICIAL FAN NEWS"},
+             "marque": "UNOFFICIAL FAN NEWS",
+             # zone sûre TikTok : le contenu (textes, visuels, sous-titres) est réduit à 85 % et décalé
+             # pour rester hors des onglets du haut, de la colonne d'icônes à droite et de la légende en bas.
+             "zone_sure": {"echelle": 0.85, "x": 30, "y": 95}},
 }
 EXTRA_PRONONCIATION = {}  # remplacé dans main() : champ "prononciation" du script (voix seulement)
 PONCT = set(",.;:!?…—-\"'«»()")
@@ -604,7 +607,54 @@ class Titre(Element):
             coller(frame, m["img"], m["cx"], m["cy"] + 20 * (1 - e), 0.6 + 0.4 * e, a * clamp((u - m["t"]) / 0.12), dx)
 
 
-TYPES = [("carte", Carte), ("liste", Liste), ("formule", Formule), ("produit", Produit), ("icone", Icone)]
+class Chiffre(Element):
+    """Accroche chiffrée : un grand nombre qui monte de 0 à sa valeur, puis s'impose (secousse, éclat)."""
+
+    def __init__(self, *args):
+        super().__init__(*args)
+        c = self.sc["chiffre"]
+        self.valeur = int(c["valeur"]); self.unite = c.get("unite", "")
+        self.d_compte = float(c.get("duree", 0.75))
+        anton = os.path.join(FONT_DIR, "ofl", "anton", "Anton-Regular.ttf")
+        self.f = ImageFont.truetype(anton, 400) if os.path.exists(anton) else police(330, "bold")
+        self.fu = ImageFont.truetype(anton, 170) if os.path.exists(anton) else police(140, "bold")
+        self.label = pilule(c["label"].upper(), 44, AMBRE + (255,), ENCRE) if c.get("label") else None
+        self.cy = self.haut + 300
+        self.cache = {}
+        self.sons += [(0.0, "pop"), (self.d_compte, "ding")]
+
+    def _img(self, n):
+        if n not in self.cache:
+            txt = f"{n}"
+            d0 = ImageDraw.Draw(Image.new("L", (1, 1)))
+            w1 = d0.textlength(txt, font=self.f); w2 = d0.textlength(self.unite, font=self.fu) if self.unite else 0
+            w = int(w1 + (30 + w2 if self.unite else 0)) + 80
+            im = Image.new("RGBA", (w, 520), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+            d.text((40, 470), txt, font=self.f, fill=AMBRE, anchor="ls", stroke_width=8, stroke_fill=ENCRE)
+            if self.unite:
+                d.text((40 + w1 + 30, 470), self.unite, font=self.fu, fill=BLANC, anchor="ls", stroke_width=6, stroke_fill=ENCRE)
+            self.cache[n] = ombre_portee(im, 24, (0, 18), 150)
+        return self.cache[n]
+
+    def dessine(self, frame, u, dx, a):
+        k = out_cubic(u / self.d_compte)
+        n = int(round(self.valeur * k))
+        apres = u - self.d_compte
+        choc = 1 + 0.12 * math.exp(-apres * 9) if apres > 0 else 1
+        sx = 14 * math.sin(apres * 70) * math.exp(-apres * 8) if apres > 0 else 0
+        coller(frame, self._img(n), W / 2 + sx, self.cy, choc, a, dx)
+        if 0 < apres < 0.4:  # éclat circulaire
+            r = int(300 + 900 * apres); al = int(140 * (1 - apres / 0.4))
+            eclat = Image.new("RGBA", (2 * r + 20, 2 * r + 20), (0, 0, 0, 0))
+            ImageDraw.Draw(eclat).ellipse((10, 10, 2 * r + 10, 2 * r + 10), outline=AMBRE + (al,), width=14)
+            coller(frame, eclat, W / 2, self.cy, 1, a, dx)
+        if self.label and apres > 0.05:
+            el = out_back((apres - 0.05) / 0.35)
+            coller(frame, self.label, W / 2, self.cy + 330, 0.7 + 0.3 * el, a * clamp((apres - 0.05) / 0.15), dx)
+
+
+TYPES = [("carte", Carte), ("liste", Liste), ("formule", Formule), ("produit", Produit), ("chiffre", Chiffre),
+         ("icone", Icone)]
 
 
 # ------------------------------------------------------------------ décor et sous-titres
@@ -731,6 +781,9 @@ def main(entree, sortie):
 
     # 3. son : voix, musique, bruitages
     tmp = os.path.abspath(os.path.splitext(sortie)[0] + "_tmp"); os.makedirs(tmp, exist_ok=True)
+    with open(os.path.join(tmp, "sous_titres.json"), "w", encoding="utf-8") as fh:  # contrôle de synchronisation
+        json.dump([{"debut": m["debut"], "fin": m["fin"], "mots": [(x["mot"], x["debut"], x["fin"]) for x in m["mots"]]}
+                   for m in sous_titres], fh, ensure_ascii=False)
     os.makedirs(os.path.dirname(os.path.abspath(sortie)), exist_ok=True)
     import soundfile as sf
     sf.write(os.path.join(tmp, "voix.wav"), voix_audio, 24000)
@@ -743,6 +796,7 @@ def main(entree, sortie):
     marque = Image.new("RGBA", (420, 60), (0, 0, 0, 0)); dm = ImageDraw.Draw(marque)
     dm.text((210, 30), theme["marque"], font=police(28, "bold"), fill=(255, 255, 255, 150), anchor="mm")
     nb = int(math.ceil(total * FPS))
+    zone = theme.get("zone_sure")
     filtre = (
         "[1:a]aresample=44100,highpass=f=75,equalizer=f=220:t=q:w=1:g=-2,equalizer=f=3400:t=q:w=1.2:g=3,"
         "acompressor=threshold=-20dB:ratio=3:attack=5:release=90:makeup=2,asplit=2[v][vsc];"
@@ -759,9 +813,10 @@ def main(entree, sortie):
     for n in range(nb):
         t = n / FPS
         ox = int(120 + 90 * math.sin(2 * math.pi * t / 15)); oy = int(160 + 130 * math.sin(2 * math.pi * t / 21))
-        frame = Image.fromarray(fond[oy:oy + H, ox:ox + W]).convert("RGBA")
+        fond_img = Image.fromarray(fond[oy:oy + H, ox:ox + W]).convert("RGBA")
         py = int((t * 28) % H)
-        frame.alpha_composite(particules.crop((0, H - py, W, 2 * H - py)))
+        fond_img.alpha_composite(particules.crop((0, H - py, W, 2 * H - py)))
+        frame = Image.new("RGBA", (W, H), (0, 0, 0, 0)) if zone else fond_img
         # scène courante (et précédente pendant la transition)
         idx = max(j for j, s in enumerate(scenes) if s["debut"] <= t + 1e-9)
         s = scenes[idx]; u = t - s["debut"]
@@ -780,6 +835,9 @@ def main(entree, sortie):
         if i_st < len(sous_titres) and sous_titres[i_st]["debut"] <= t:
             dessine_sous_titre(frame, sous_titres[i_st], t, mots_cles)
         frame.alpha_composite(marque, ((W - marque.width) // 2, 150))
+        if zone:
+            couche = frame.resize((int(W * zone["echelle"]), int(H * zone["echelle"])), Image.BILINEAR)
+            frame = fond_img; frame.alpha_composite(couche, (zone["x"], zone["y"]))
         ImageDraw.Draw(frame).rectangle((0, 0, int(W * t / total), 7), fill=AMBRE)
         proc.stdin.write(frame.convert("RGB").tobytes())
         if n % (FPS * 5) == 0:

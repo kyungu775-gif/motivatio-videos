@@ -38,11 +38,11 @@ def check_script(path):
         if sans_lecture:
             errs.append(f"scène {i} : chiffres dans le texte lu ({', '.join(sans_lecture)}) : écrire en lettres "
                         "ou ajouter leur lecture dans le champ « prononciation »")
-        visuels = [k for k in ("icone", "carte", "liste", "formule", "produit") if s.get(k)]
+        visuels = [k for k in ("icone", "carte", "liste", "formule", "produit", "chiffre") if s.get(k)]
         if len(visuels) > 1:
             errs.append(f"scène {i} : un seul visuel par scène ({', '.join(visuels)})")
         if not visuels:
-            errs.append(f"scène {i} : aucun visuel (icone, carte, liste, formule ou produit)")
+            errs.append(f"scène {i} : aucun visuel (icone, carte, liste, formule, produit ou chiffre)")
         liste = s.get("liste")
         if liste and not 2 <= len(liste.get("items", [])) <= 5:
             errs.append(f"scène {i} : une liste doit avoir 2 à 5 éléments")
