@@ -41,8 +41,8 @@ LANGUES = {
     },
     "en": {
         "voix": "af_heart", "code": "en-us",
-        "prononciation": [(r"\bMOTIVATIO\b", "Motivatio"), (r"\bCV\b", "C V"), (r"\bCVs\b", "C Vs"),
-                          (r"\bGTA\b", "G T A"), (r"\bPS5\b", "P S five")],
+        "prononciation": [(r"\bMOTIVATIO\b", "Motivatio"), (r"\bCV\b", "C V"), (r"\bCVs\b", "C Vs"), (r"\bPS5\b", "P S five")],
+        # « GTA » est laissé tel quel : la voix le lit correctement « gee-tee-AY » (une règle « G T A » donnait « gee-tee-uh »).
         "badge_mauvais": "Too vague", "badge_bon": "Clear", "cta": "Comment GUIDE",
     },
 }

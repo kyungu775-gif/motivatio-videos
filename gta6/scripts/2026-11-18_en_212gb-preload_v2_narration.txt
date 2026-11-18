@@ -1,5 +1,5 @@
 NARRATION v2 — GTA 6 needs up to 212 GB (2026-11-18)
-Voice: Kokoro af_heart (AI, English) · speed 1.05 · 33.4 s
+Voice: Kokoro af_heart (AI, English) · speed 1.05 · 33.3 s
 
 Spoken text by scene (subtitles show the same words):
 
@@ -9,7 +9,7 @@ Spoken text by scene (subtitles show the same words):
 4. To get it on time, check your free space, turn on automatic downloads, and keep your console on, or in rest or sleep mode.
 5. How much space is left on your console? Tell me in the comments, and follow for verified GTA 6 news.
 
-Voice-only pronunciation: 6 = six, 212 = two hundred twelve, 10 = tenth, 19 = nineteenth, GTA = G T A
+Voice-only pronunciation: 6 = six, 212 = two hundred twelve, 10 = tenth, 19 = nineteenth
 
 On-screen quote: "Up to 212 GB of available space depending on your device."
 
