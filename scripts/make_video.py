@@ -41,11 +41,22 @@ LANGUES = {
     },
     "en": {
         "voix": "af_heart", "code": "en-us",
-        "prononciation": [(r"\bMOTIVATIO\b", "Motivatio"), (r"\bCV\b", "C V"), (r"\bCVs\b", "C Vs")],
+        "prononciation": [(r"\bMOTIVATIO\b", "Motivatio"), (r"\bCV\b", "C V"), (r"\bCVs\b", "C Vs"),
+                          (r"\bGTA\b", "G T A"), (r"\bPS5\b", "P S five")],
         "badge_mauvais": "Too vague", "badge_bon": "Clear", "cta": "Comment GUIDE",
     },
 }
 LANGUE = LANGUES["fr"]  # remplacé dans main() selon le script
+
+# Thèmes visuels (champ "theme" du script JSON ; "motivatio" par défaut, inchangé).
+THEMES = {
+    "motivatio": {"accent": (255, 181, 71), "accent2": (255, 107, 107), "fonds": FONDS,
+                  "marque": "M O T I V A T I O"},
+    "gta6": {"accent": (255, 214, 10), "accent2": (255, 45, 135),
+             "fonds": [((10, 6, 24), (44, 10, 62)), ((8, 10, 30), (52, 12, 70)), ((14, 6, 28), (60, 14, 58))],
+             "marque": "UNOFFICIAL FAN NEWS"},
+}
+EXTRA_PRONONCIATION = {}  # remplacé dans main() : champ "prononciation" du script (voix seulement)
 PONCT = set(",.;:!?…—-\"'«»()")
 
 
@@ -188,6 +199,9 @@ def pilule(texte, taille, fond, couleur, pad=(40, 18), graisse="bold", icone_nom
 
 # ------------------------------------------------------------------ voix et minutage
 def prononce(mot):
+    nu = mot.strip(",.;:!?…\"'«»()")
+    if nu in EXTRA_PRONONCIATION:
+        mot = mot.replace(nu, EXTRA_PRONONCIATION[nu])
     for motif, rempl in LANGUE["prononciation"]:
         mot = re.sub(motif, rempl, mot)
     return mot
@@ -203,7 +217,7 @@ def synthese(k, texte, vitesse):
         else:
             mots.append(j)
     tts = [prononce(m) for m in mots]
-    audio, sr, tim = k.create_timed(" ".join(tts), voice=LANGUE["voix"], speed=vitesse, lang=LANGUE["code"], trim=False)
+    audio, sr, tim = k.create_timed(" ".join(tts), voice=VOIX, speed=vitesse, lang=LANGUE["code"], trim=False)
     groupes, cur = [], []
     for t in tim:
         if t.phoneme == " ":
@@ -656,8 +670,11 @@ def dessine_sous_titre(frame, morceau, t, mots_cles):
 
 
 # ------------------------------------------------------------------ assemblage
+VOIX = None
+
+
 def main(entree, sortie):
-    global ICONS_DIR, LANGUE
+    global ICONS_DIR, LANGUE, VOIX, EXTRA_PRONONCIATION, AMBRE, CORAIL, FONDS
     from kokoro_onnx import Kokoro
     data = json.load(open(entree, encoding="utf-8"))
     if not data.get("scenes"):
@@ -666,7 +683,14 @@ def main(entree, sortie):
     if langue not in LANGUES:
         raise ValueError(f"Langue « {langue} » inconnue (attendu : {', '.join(LANGUES)})")
     LANGUE = LANGUES[langue]
-    log(f"langue : {langue} (voix {LANGUE['voix']})")
+    VOIX = data.get("voix") or LANGUE["voix"]
+    EXTRA_PRONONCIATION = dict(data.get("prononciation", {}))
+    theme = THEMES.get(data.get("theme", "motivatio"))
+    if theme is None:
+        raise ValueError(f"Thème « {data.get('theme')} » inconnu (attendu : {', '.join(THEMES)})")
+    AMBRE, CORAIL, FONDS = theme["accent"], theme["accent2"], theme["fonds"]
+    avec_musique = data.get("musique", True)
+    log(f"langue : {langue} (voix {VOIX}), thème {data.get('theme', 'motivatio')}, musique {'oui' if avec_musique else 'non'}")
     modele, voix, ICONS_DIR = ensure_resources()
     graine = int(hashlib.md5(data["titre"].encode()).hexdigest(), 16) % 10_000
     k = Kokoro(modele, voix)
@@ -710,13 +734,14 @@ def main(entree, sortie):
     os.makedirs(os.path.dirname(os.path.abspath(sortie)), exist_ok=True)
     import soundfile as sf
     sf.write(os.path.join(tmp, "voix.wav"), voix_audio, 24000)
-    sf.write(os.path.join(tmp, "musique.wav"), son.musique(total, graine), son.SR)
+    musique = son.musique(total, graine) if avec_musique else np.zeros(int(total * son.SR) + son.SR, np.float32)
+    sf.write(os.path.join(tmp, "musique.wav"), musique, son.SR)
     sf.write(os.path.join(tmp, "sfx.wav"), son.bruitages(total, evenements, graine), son.SR)
 
     # 4. images
     fond, particules = fond_video(graine)
     marque = Image.new("RGBA", (420, 60), (0, 0, 0, 0)); dm = ImageDraw.Draw(marque)
-    dm.text((210, 30), "M O T I V A T I O", font=police(28, "bold"), fill=(255, 255, 255, 150), anchor="mm")
+    dm.text((210, 30), theme["marque"], font=police(28, "bold"), fill=(255, 255, 255, 150), anchor="mm")
     nb = int(math.ceil(total * FPS))
     filtre = (
         "[1:a]aresample=44100,highpass=f=75,equalizer=f=220:t=q:w=1:g=-2,equalizer=f=3400:t=q:w=1.2:g=3,"

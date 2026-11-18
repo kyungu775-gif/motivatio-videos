@@ -15,6 +15,8 @@ ICONS = os.path.join(CACHE, "lucide", "package", "icons")
 def check_script(path):
     errs = []
     d = json.load(open(path, encoding="utf-8"))
+    if d.get("theme", "motivatio") not in ("motivatio", "gta6"):
+        errs.append(f"thème « {d.get('theme')} » inconnu (attendu motivatio ou gta6)")
     if d.get("langue", "fr") not in ("fr", "en"):
         errs.append(f"langue « {d.get('langue')} » inconnue (attendu fr ou en)")
     titre = d.get("titre", "").replace("*", "")
@@ -30,8 +32,12 @@ def check_script(path):
     for i, s in enumerate(scenes, 1):
         if not s.get("texte"):
             errs.append(f"scène {i} sans texte")
-        if any(ch.isdigit() for ch in s.get("texte", "")):
-            errs.append(f"scène {i} : chiffres dans le texte lu, à écrire en lettres pour la voix")
+        pron = d.get("prononciation", {})
+        sans_lecture = [w for w in s.get("texte", "").split()
+                        if any(ch.isdigit() for ch in w) and w.strip(",.;:!?…\"'«»()") not in pron]
+        if sans_lecture:
+            errs.append(f"scène {i} : chiffres dans le texte lu ({', '.join(sans_lecture)}) : écrire en lettres "
+                        "ou ajouter leur lecture dans le champ « prononciation »")
         visuels = [k for k in ("icone", "carte", "liste", "formule", "produit") if s.get(k)]
         if len(visuels) > 1:
             errs.append(f"scène {i} : un seul visuel par scène ({', '.join(visuels)})")

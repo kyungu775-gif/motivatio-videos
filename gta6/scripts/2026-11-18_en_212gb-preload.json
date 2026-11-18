@@ -1,0 +1,39 @@
+{
+  "langue": "en",
+  "theme": "gta6",
+  "voix": "af_heart",
+  "musique": true,
+  "titre": "GTA 6 needs up to *212 GB*",
+  "vitesse": 1.05,
+  "mots_cles": ["212", "Rockstar", "Thursday", "rumor"],
+  "prononciation": {"6": "six", "212": "two hundred twelve", "10": "tenth", "19": "nineteenth"},
+  "sources": [
+    {"fait": "Up to 212 GB of available space depending on the device; pre-load from November 10, 2026; console on or in Rest/Sleep mode with automatic downloads/updates enabled",
+     "url": "https://support.rockstargames.com/articles/7nPqOA2uCbpEQHXx7KVrYd/grand-theft-auto-vi-pre-load-faq",
+     "verifie_le": "2026-11-18"},
+    {"fait": "Release date Thursday, November 19, 2026 on PS5 and Xbox Series X|S",
+     "url": "https://www.rockstargames.com/newswire",
+     "verifie_le": "2026-11-18"}
+  ],
+  "scenes": [
+    {"texte": "GTA 6 can need up to 212 gigabytes of free space on your console.",
+     "icone": "hard-drive", "label": "Up to 212 GB"},
+    {"texte": "This is not a rumor. It's written on Rockstar's official pre-load support page.",
+     "carte": {"type": "info", "etiquette": "Rockstar Support · Pre-load FAQ",
+               "texte": "\"Up to 212 GB of available space depending on your device.\""}},
+    {"texte": "Pre-load started on November 10. The game launches this Thursday, November 19.",
+     "liste": {"style": "coche", "titre": "Key dates",
+               "items": [{"texte": "Pre-load: since Nov 10", "mot": "pre-load"},
+                         {"texte": "Launch: Thursday, Nov 19", "mot": "Thursday"}]}},
+    {"texte": "Before Thursday, check your free space, turn on automatic downloads, and keep your console on or in rest mode. That's what Rockstar's FAQ asks for.",
+     "formule": ["Free space", "Auto downloads", "Rest mode"]},
+    {"texte": "How much space is left on your console? Tell me in the comments, and follow for verified GTA 6 news.",
+     "icone": "message-circle", "label": "Comment your free space"}
+  ],
+  "tiktok": {
+    "titre_tiktok": "GTA 6 needs up to 212 GB: get ready before launch",
+    "legende": "GTA 6 can need up to 212 GB of free space, according to Rockstar's official pre-load FAQ. 3 things to check before launch day. How much space do you have left? 👇\n\nUnofficial fan channel · AI voice · Source: support.rockstargames.com\n\n#GTA6 #GTAVI #PS5 #XboxSeriesX #gaming",
+    "sujet": "official info – pre-load storage requirement",
+    "accroche": "GTA 6 can need up to 212 gigabytes of free space on your console."
+  }
+}
