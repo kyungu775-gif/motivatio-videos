@@ -5,7 +5,7 @@ Rockstar publishes new information.
 
 | # | Draft date (Kinshasa) | Topic | Angle / hook | Official source to check | Status |
 |---|---|---|---|---|---|
-| 1 | Wed 18/11, 20:00 | Pre-load storage | "GTA 6 needs up to 212 GB" + 3 things to check | Rockstar Support pre-load FAQ | Scheduled 20:00 Kinshasa, auto-publish (uuid -9022177230032912037) |
+| 1 | Wed 18/11, 20:00 | Pre-load storage | "GTA 6 needs up to 212 GB" + 3 things to check | Rockstar Support pre-load FAQ | Published — tiktok.com/@gta6.focusfr/video/7709589779385568532 |
 | 2 | Thu 19/11 | Launch day | "GTA 6 is out: what is officially confirmed" (platforms, setting, protagonists) | Rockstar Newswire, rockstargames.com/VI | To produce |
 | 3 | Fri 20/11 | PC version | "Is GTA 6 on PC? What Rockstar has (not) said" | Rockstar Newswire, Take-Two releases | To produce |
 | 4 | Sat 21/11 | Creator rules | "Posting GTA 6 clips? Rockstar's spoiler rules" | Rockstar policy on posting copyrighted material | To produce |
