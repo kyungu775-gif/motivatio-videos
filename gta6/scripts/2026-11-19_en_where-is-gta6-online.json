@@ -1,0 +1,50 @@
+{
+  "langue": "en",
+  "theme": "gta6",
+  "voix": "af_heart",
+  "musique": true,
+  "titre": "Where is *GTA 6 Online?*",
+  "vitesse": 1.05,
+  "mots_cles": ["Online", "single", "Rockstar", "date"],
+  "prononciation": {"6": "six", "5": "five", "2013": "twenty thirteen"},
+  "remplace": "2026-11-19_en_no-online-at-launch (accroche jugée trop catégorique par Serge le 19/11)",
+  "sources": [
+    {"fait": "\"Grand Theft Auto VI is a single player experience, coming November 19 to PlayStation 5 and Xbox Series X|S\" (Rockstar Newswire, pre-order announcement)",
+     "url": "https://www.rockstargames.com/newswire/article/5171972o3ak5oa/pre-order-grand-theft-auto-vi-on-june-25",
+     "verifie_le": "2026-11-19"},
+    {"fait": "PlayStation FAQ: \"Does Grand Theft Auto VI have any multiplayer modes or features?\" — \"Grand Theft Auto VI is a single-player experience.\"",
+     "url": "https://www.playstation.com/en-gb/games/grand-theft-auto-vi/",
+     "verifie_le": "2026-11-19 (via press reports quoting the FAQ)"},
+    {"fait": "No official release date for a GTA VI online mode found in the sources consulted (Rockstar Newswire, Take-Two statements as reported)",
+     "url": "https://www.rockstargames.com/newswire",
+     "verifie_le": "2026-11-19"},
+    {"fait": "Take-Two shareholder meeting (17/09/2026), as reported: \"We will continue to support GTA Online after GTA VI release and beyond.\"",
+     "url": "https://gamingbolt.com/?p=653088",
+     "verifie_le": "2026-11-19 (secondary source: press report of the meeting)"},
+    {"fait": "History: GTA V released 17/09/2013, GTA Online 01/10/2013",
+     "url": "https://androidheadlines.com/2026/09/rockstar-says-gta-online-will-be-supported-beyond-the-gta-6-release.html",
+     "verifie_le": "2026-11-19"}
+  ],
+  "scenes": [
+    {"texte": "GTA 6 is finally here. But where is GTA 6 Online?",
+     "icone": "globe", "label": "GTA 6 Online?"},
+    {"texte": "Rockstar presents GTA 6 as a single player experience. The PlayStation FAQ uses the same words.",
+     "carte": {"type": "info", "etiquette": "Rockstar Newswire",
+               "texte": "\"Grand Theft Auto VI is a single player experience.\""}},
+    {"texte": "And in the sources we checked, Rockstar has not announced any official date for a GTA 6 Online mode.",
+     "icone": "calendar-x", "label": "No official online date"},
+    {"texte": "Meanwhile, Take-Two told shareholders it will keep supporting the current GTA Online after GTA 6.",
+     "icone": "server", "label": "GTA Online continues"},
+    {"texte": "In 2013, GTA Online arrived about two weeks after GTA 5. Will GTA 6 follow the same path? We don't know yet.",
+     "carte": {"type": "info", "etiquette": "History · 2013",
+               "texte": "GTA 5: September 17, 2013. GTA Online: October 1, 2013."}},
+    {"texte": "Online or story mode: which one matters more to you? Tell me in the comments, and follow for verified GTA 6 news.",
+     "icone": "message-circle", "label": "Online or story?"}
+  ],
+  "tiktok": {
+    "titre_tiktok": "Where is GTA 6 Online?",
+    "legende": "GTA 6 is here. But where is GTA 6 Online? Rockstar presents GTA VI as a single player experience, and no official date for a GTA 6 Online mode has been announced in the sources we checked. Online or story mode, which matters more to you? 👇 Unofficial fan channel · AI voice · Sources: Rockstar Newswire, PlayStation FAQ #GTA6 #GTAVI #GTAOnline #PS5 #gaming",
+    "sujet": "official info – single player experience, no GTA 6 Online date announced",
+    "accroche": "GTA 6 is finally here. But where is GTA 6 Online?"
+  }
+}

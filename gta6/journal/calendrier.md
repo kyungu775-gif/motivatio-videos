@@ -6,7 +6,7 @@ Rockstar publishes new information.
 | # | Draft date (Kinshasa) | Topic | Angle / hook | Official source to check | Status |
 |---|---|---|---|---|---|
 | 1 | Wed 18/11, 20:00 | Pre-load storage | "GTA 6 needs up to 212 GB" + 3 things to check | Rockstar Support pre-load FAQ | Published — tiktok.com/@gta6.focusfr/video/7709589779385568532 |
-| 2 | Thu 19/11, 20:00 | Single-player at launch | "No online mode in GTA 6 at launch?" | Rockstar Newswire, PlayStation FAQ, Take-Two (reported) | Metricool draft (uuid -2393212505480278221) |
+| 2 | Thu 19/11, 20:00 | GTA 6 Online status | "Where is GTA 6 Online?" | Rockstar Newswire, PlayStation FAQ, Take-Two (reported) | Metricool draft (uuid -2393212505480278221) |
 | 3 | Fri 20/11 | PC version | "Is GTA 6 on PC? What Rockstar has (not) said" | Rockstar Newswire, Take-Two releases | To produce |
 | 4 | Sat 21/11 | Creator rules | "Posting GTA 6 clips? Rockstar's spoiler rules" | Rockstar policy on posting copyrighted material | To produce |
 | 5 | Sun 22/11 | Timeline | "13 years after GTA 5: the road to GTA 6" (2025 → May 26 2026 → Nov 19 2026) | Rockstar Newswire announcements | To produce |
